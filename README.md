@@ -5,7 +5,7 @@ universities internally measure and, if need be, strengthen the resilience of th
 and how can universities contribute to the resilience of their local communities and regions? This
 white paper will describe the analytical and quantitative methodology. Our analytical framework
 will focus on three resilience categories: the built environment, the financial and economic
-environment, and the university’s contribution to the local culture of resilience.<br />
+environment, and the university’s contribution to the local culture of resilience.<br /><br />
 We collect data on various aspects of these categories described below in order to score each
 university with regards to its expected resilience to various types of adverse outcomes. We report
 the results of this investigation using an intuitive circular visualization, as well as categorical and
