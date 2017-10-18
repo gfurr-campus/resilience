@@ -1,3 +1,5 @@
+console.log("I'm here...");
+
 var data = {
 	school: "",
 	buildName: "",
@@ -5,25 +7,25 @@ var data = {
 	abbreviation: "",
 	campus: "",
 	address: "",
-	grossSquareFootage: "",
+	grossSquareFootage: 0,
 	leasingType: "",
 	status: "",
 	class: "",
-	yearBuilt: "",
-	age: "",
+	yearBuilt: 0,
+	age: 0,
 	leedLevel: "",
-	leedCertificationYear: "",
-	longitude: "",
-	latitude: "",
+	leedCertificationYear: 0,
+	longitude: 0,
+	latitude: 0,
 	precint: "",
 	city: "",
 	floorPlan: "",
-	FCI: "",
-	resType: "",
-	ownershipType: "",
-	ERC: "",
-	LRC: "",
-	LRY: "",
+	FCI: 0,
+	resType: 0,
+	ownershipType: 0,
+	ERC: 0,
+	LRC: 0,
+	LRY: 0,
 	condition: 0, // complete later...
 	AC: 0,
 	accessibleArea: 0,
@@ -115,10 +117,15 @@ var updateNumberField = function(number){
 }
 
 var updateStringField = function(string){
-	var s = string.replace(/\s/g.'');
+	var s = string.replace(/\s/g,'');
 	if(s.length == 0){
 		return s;
 	}else{
 		return string;
 	}
 }
+
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.name= "John";
+});
