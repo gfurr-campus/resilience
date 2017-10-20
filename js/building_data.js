@@ -7,6 +7,8 @@ var data = {
 	abbreviation: "",
 	campus: "",
 	address: "",
+	occupancyDate: "",
+	constructType: "",
 	grossSquareFootage: 0,
 	leasingType: "",
 	status: "",
@@ -26,7 +28,7 @@ var data = {
 	ERC: 0,
 	LRC: 0,
 	LRY: 0,
-	condition: 0, // complete later...
+	condition: 0,
 	AC: 0,
 	accessibleArea: 0,
 	assignableArea: 0,
@@ -57,7 +59,7 @@ var hasRequiredField = function(data, field){
 }
 
 // Incomplete
-var submitNewData = function(school, bName, bNum, abbrev, campus, address, gsf,lType,status,cls,
+var submitNewData = function(school, bName, bNum, abbrev, campus, address, occupance, constr, gsf,lType,status,cls,
 	built, age, leedLvl, certYr, x, y, pre, city,plan, fci, res, own, erc, lrc, lry, cond, ac,
 	access, assigns, bCost, nFloors, update, usage, nsf, asf){
 	entry = data;
@@ -67,6 +69,8 @@ var submitNewData = function(school, bName, bNum, abbrev, campus, address, gsf,l
 	entry.abbreviation = updateStringField(abbrev);
 	entry.campus = updateStringField(campus);
 	entry.address = updateStringField(address);
+	entry.occupancyDate updateStringField(occupance);
+	entry.constructType = updateStringField(constr);
 	entry.grossSquareFootage = updateNumberField(gsf);
 	entry.leasingType = updateStringField(lType);
 	entry.status = updateStringField(status);
@@ -96,7 +100,6 @@ var submitNewData = function(school, bName, bNum, abbrev, campus, address, gsf,l
 	usage = updateStringField(usage);
 	NSF = updateNumberField(nsf);
 	ASF = updateNumberField(asf);
-	// ...
 }
 
 var updateFileField = function(file){
