@@ -1,477 +1,467 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Page Title</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<script src="../js/building_data.js"></script>
-<table width="100%">
-	<tr>
-		<td width="1%" style="white-space:nowrap">
-			<div style="display:inline;"><img src="../images/image0.png"></div>
-			<div style="display:inline; white-space:nowrap;font-family: Verdana, Helvetica, sans-serif;position:relative;top:25px;">[Data Visualization Tool?]</div>
-		</td>
-		<td align="right">
-			<i class="fa fa-sign-in"></i><br>
-			<i class="fa fa-sign-out"></i><br>
-			<i class="fa fa-edit"></i><br>
-			<i class="fa fa-question-circle"></i>
-		</td>
-		<td width="10px"></td>
-	</tr>
-</table>
-
-<table width="100%" style="font-family: Verdana, Helvetica, sans-serif;">
-	<tr>
-		<td width="10px"></td>
-		<td align="left" width="13%">
-			<a href="../index.html" style="text-decoration: none;color:black;"> <i class="fa fa-home"></i>
-			Home</a>
-		</td>
-		<td align="left" width="13%">
-			<a href="../html/about.html" style="text-decoration: none;color:black;"> <i class="fa fa-user-circle-o"></i>
-			About</a>
-		</td>
-		<td align="left" width="13%">
-			<a href="../html/data.html" style="text-decoration: none;color:black;"> <i class="fa fa-database"></i>Data</a>
-		</td>
-		<td align="left" width="14%">
-			<a href="../html/charts.html" style="text-decoration: none;color:black;"> <i class="fa fa-pie-chart"></i>
-			Charts</a>
-		</td>
-		<td align="left" width="18%">
-			<a href="../html/parts.html" style="text-decoration: none;color:black;"> <i class="fa fa-users"></i>
-			Participants</a>
-		</td>
-		<td align="left" width="14%">
-			<a href="../html/settings.html" style="text-decoration: none;color:black;"> <i class="fa fa-gears"></i>
-			Settings</a>
-		</td>
-		<td align="left" width="14%">
-			<a href="../html/contact.html" style="text-decoration: none;color:black;"> <i class="fa fa-commenting"></i>
-			Contact Us</a>
-		</td>
-		<td width="10px"></td>
-	</tr>
-</table>
-<hr style="margin:5px;">
-</head>
-<body>
-
-<div ng-app="myApp" ng-controller="myCtrl">
-	<table width="100%">
-		<tr>
-			<td width="10px"></td>
-			<th><h2>[Data Table Name]</h2></th>
-			<td align="right"><button  type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Create New Entry</button></td>
-			<td width="10px"></td>
-		</tr>
-	</table>
-	<table width="100%" class="table table-striped">
-		<tr>
-			<td width="10px"></td>
-			<th>AFFILIATION <i class="fa fa-sort"></i></th>
-			<th>NAME <i class="fa fa-sort"></i></th>
-			<th>ADDRESS <i class="fa fa-sort"></i></th>
-			<th>BUILT <i class="fa fa-sort"></i></th>
-			<th>COST <i class="fa fa-sort"></i></th>
-			<th>LEED LVL <i class="fa fa-sort"></i></th>
-			<th>LEED YR <i class="fa fa-sort"></i></th>
-			<th>FCI <i class="fa fa-sort"></i></th>
-			<th>ERC <i class="fa fa-sort"></i></th>
-			<th>LRC <i class="fa fa-sort"></i></th>
-			<th>LR YEAR <i class="fa fa-sort"></i></th>
-			<th>UPDATED <i class="fa fa-sort"></i></th>
-		</tr>
-		<tr>
-			<td width="10px"></td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-		</tr>
-		<tr>
-			<td width="10px"></td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-			<td>[Data Entry]</td>
-		</tr>
-	</table>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
-	<div class="modal-dialog" style="width:65%;">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Create New Entry</h4>
-        </div>
-        <div class="modal-body">
-          <table width="100%">
-          	<tr>
-          		<th width="25%">
-          			School Affiliation
-          		</th>
-          		<td width="5px"></td>
-          		<th width="25%">
-          			Campus
-          		</th>
-          		<td width="5px"></td>
-          		<th width="25%">
-          			Building Name
-          		</th>
-          		<td width="5px"></td>
-          		<th width="10%">
-          			Build #
-          		</th>
-          		<td width="5px"></td>
-          		<th width="10%">
-          			Abbrev
-          		</th>
-          	</tr>
-          	<tr>
-          		<td align="left">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="right">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;"></input>
-          		</td>
-          	</tr>
-          </table><br>
-          <table width="100%">
-          	<tr>
-          		<th width="25%">
-          			Address
-          		</th>
-          		<td width="5px"></td>
-          		<th width="25%">
-          			City
-          		</th>
-          		<td width="5px"></td>
-          		<th width="25%">
-          			Precint
-          		</th>
-          		<td width="5px"></td>
-          		<th width="10%">
-          			Longitude
-          		</th>
-          		<td width="5px"></td>
-          		<th width="10%">
-          			Latititude
-          		</th>
-          	</tr>
-          	<tr>
-          		<td align="left">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="right">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;"></input>
-          		</td>
-          	</tr>
-          </table><br>
-          <table width="100%">
-          	<tr>
-          		<th width="15%">
-          			Class
-          		</th>
-          		<td width="5px"></td>
-          		<th width="8%">
-          			Year Built
-          		</th>
-          		<td width="5px"></td>
-          		<th width="5%">
-          			Age
-          		</th>
-          		<td width="5px"></td>
-          		<th width="25%">
-          			Floor Plans
-          		</th>
-          		<td width="5px"></td>
-          		<th width="8%">
-          			# of Floors
-          		</th>
-          		<td width="5px"></td>
-          		<th width="15%">
-          			Building Cost
-          		</th>
-          		<td width="5px"></td>
-          		<th width="5%">
-          			AC
-          		</th>
-          		<td width="5px"></td>
-          		<th width="8%">
-          			Usage
-          		</th>
-          	</tr>
-          	<tr>
-          		<td align="left">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="right">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;"></input>
-          		</td>
-          	</tr>
-          </table><br>
-          <table width="100%">
-          	<tr>
-          		<th width="25%">
-          			Construction Type
-          		</th>
-          		<td width="5px"></td>
-          		<th width="15%">
-          			GSF
-          		</th>
-          		<td width="5px"></td>
-          		<th width="15%">
-          			NSF
-          		</th>
-          		<td width="5px"></td>
-          		<th width="15%">
-          			ASF
-          		</th>
-          		<td width="5px"></td>
-          		<th width="12%">
-          			Accessible Area
-          		</th>
-          		<td width="5px"></td>
-          		<th width="12%">
-          			Assignable Area
-          		</th>
-          	</tr>
-          	<tr>
-          		<td align="left">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="right">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="right">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="right">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="right">
-          			<input style="width:100%;"></input>
-          		</td>
-          	</tr>
-          </table><br>
-          <table width="100%">
-          	<tr>
-          		<th width="24%">
-          			Leasing Type
-          		</th>
-          		<td width="5px"></td>
-          		<th width="24%">
-          			Resident Type
-          		</th>
-          		<td width="5px"></td>
-          		<th width="24%">
-          			Ownership Type
-          		</th>
-          		<td width="5px"></td>
-          		<th width="7%">
-          			Occupancy
-          		</th>
-          		<td width="5px"></td>
-          		<th width="7%">
-          			Condition
-          		</th>
-          		<td width="5px"></td>
-          		<th width="7%">
-          			Status
-          		</th>
-          	</tr>
-          	<tr>
-          		<td align="left">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="right">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;"></input>
-          		</td>
-          	</tr>
-          </table><br>
-          <table width="100%">
-          	<tr>
-          		<th width="16%">
-          			LEED Level
-          		</th>
-          		<td width="5px"></td>
-          		<th width="16%">
-          			LEED Year
-          		</th>
-          		<td width="5px"></td>
-          		<th width="16%">
-          			FCI
-          		</th>
-          		<td width="5px"></td>
-          		<th width="16%">
-          			ERC
-          		</th>
-          		<td width="5px"></td>
-          		<th width="16%">
-          			LRC
-          		</th>
-          		<td width="5px"></td>
-          		<th width="16%">
-          			LRY
-          		</th>
-          	</tr>
-          	<tr>
-          		<td align="left">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="right">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-          		<td align="center">
-          			<input style="width:100%;"></input>
-          		</td>
-          	</tr>
-          </table><br>
-	  <table width="100%">
-		<tr>
-			<th width="14%">
-          			Last Update
-          		</th>
-          		<td width="5px"></td>
-			<th width="84%">
-          			Comment(s)
-          		</th>
-		</tr>
-		<tr align="center">
-			<td align="center">
-          			<input style="width:100%;"></input>
-          		</td>
-          		<td width="5px"></td>
-			<td align="center">
-          			<input style="width:100%;"></input>
-          		</td>
-		</tr>
-	  </table>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Clear</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+   <head>
+      <title>Page Title</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+      <script src="../js/building_data.js"></script>
+      <table width="100%">
+         <tr>
+            <td width="1%" style="white-space:nowrap">
+               <div style="display:inline;"><img src="../images/image0.png"></div>
+               <div style="display:inline; white-space:nowrap;font-family: Verdana, Helvetica, sans-serif;position:relative;top:25px;">[Data Visualization Tool?]</div>
+            </td>
+            <td align="right">
+               <i class="fa fa-sign-in"></i><br>
+               <i class="fa fa-sign-out"></i><br>
+               <i class="fa fa-edit"></i><br>
+               <i class="fa fa-question-circle"></i>
+            </td>
+            <td width="10px"></td>
+         </tr>
+      </table>
+      <table width="100%" style="font-family: Verdana, Helvetica, sans-serif;">
+         <tr>
+            <td width="10px"></td>
+            <td align="left" width="13%">
+               <a href="../index.html" style="text-decoration: none;color:black;"> <i class="fa fa-home"></i>
+               Home</a>
+            </td>
+            <td align="left" width="13%">
+               <a href="../html/about.html" style="text-decoration: none;color:black;"> <i class="fa fa-user-circle-o"></i>
+               About</a>
+            </td>
+            <td align="left" width="13%">
+               <a href="../html/data.html" style="text-decoration: none;color:black;"> <i class="fa fa-database"></i> Data</a>
+            </td>
+            <td align="left" width="14%">
+               <a href="../html/charts.html" style="text-decoration: none;color:black;"> <i class="fa fa-pie-chart"></i>
+               Charts</a>
+            </td>
+            <td align="left" width="18%">
+               <a href="../html/parts.html" style="text-decoration: none;color:black;"> <i class="fa fa-users"></i>
+               Participants</a>
+            </td>
+            <td align="left" width="14%">
+               <a href="../html/settings.html" style="text-decoration: none;color:black;"> <i class="fa fa-gears"></i>
+               Settings</a>
+            </td>
+            <td align="left" width="14%">
+               <a href="../html/contact.html" style="text-decoration: none;color:black;"> <i class="fa fa-commenting"></i>
+               Contact Us</a>
+            </td>
+            <td width="10px"></td>
+         </tr>
+      </table>
+      <hr style="margin:5px;">
+   </head>
+   <body>
+      <div ng-app="myApp" ng-controller="myCtrl">
+         <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#finance">Financial</a></li>
+            <li><a data-toggle="tab" href="#infrastructure">Infrastructure</a></li>
+            <li><a data-toggle="tab" href="#social">Socio-Political</a></li>
+            <li><a data-toggle="tab" href="#financex">Financial*</a></li>
+            <li><a data-toggle="tab" href="#infrastructurex">Infrastructure*</a></li>
+            <li><a data-toggle="tab" href="#socialx">Socio-Political*</a></li>
+         </ul>
+         <div class="tab-content">
+            <div id="finance" class="tab-pane fade in active">
+               <h3>&nbsp; Aggregated Financial Data</h3>
+               <div align="right" style="margin-bottom: 10px;margin-top: -40px;"><button  type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Create New Entry</button> &nbsp;</div>
+               <table width="100%" class="table table-striped">
+                  <tr>
+                     <td width="10px"></td>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                  </tr>
+                  <tr>
+                     <td width="10px"></td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                  </tr>
+                  <tr>
+                     <td width="10px"></td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                  </tr>
+               </table>
+            </div>
+            <div id="infrastructure" class="tab-pane fade">
+               <h3>&nbsp; Aggregated Infrastructure Data</h3>
+               <div align="right" style="margin-bottom: 10px;margin-top: -40px;"><button  type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Create New Entry</button> &nbsp;</div>
+               <table width="100%" class="table table-striped">
+                  <tr>
+                     <td width="10px"></td>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                  </tr>
+                  <tr>
+                     <td width="10px"></td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                  </tr>
+                  <tr>
+                     <td width="10px"></td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                  </tr>
+               </table>
+            </div>
+            <div id="social" class="tab-pane fade">
+               <h3>&nbsp; Aggregated Socio-Political Data</h3>
+               <div align="right" style="margin-bottom: 10px;margin-top: -40px;"><button  type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Create New Entry</button> &nbsp;</div>
+               <table width="100%" class="table table-striped">
+                  <tr>
+                     <td width="10px"></td>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                  </tr>
+                  <tr>
+                     <td width="10px"></td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                  </tr>
+                  <tr>
+                     <td width="10px"></td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                  </tr>
+               </table>
+            </div>
+            <div id="financex" class="tab-pane fade">
+               <h3>&nbsp; Singular Financial Entries</h3>
+               <div align="right" style="margin-bottom: 10px;margin-top: -40px;"><button  type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Create New Entry</button> &nbsp;</div>
+               <table width="100%" class="table table-striped">
+                  <tr>
+                     <td width="10px"></td>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                  </tr>
+                  <tr>
+                     <td width="10px"></td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                  </tr>
+                  <tr>
+                     <td width="10px"></td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                  </tr>
+               </table>
+            </div>
+            <div id="infrastructurex" class="tab-pane fade">
+               <h3>&nbsp; Singular Infrastructure Entries</h3>
+               <div align="right" style="margin-bottom: 10px;margin-top: -40px;"><button  type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Create New Entry</button> &nbsp;</div>
+               <table width="100%" class="table table-striped">
+                  <tr>
+                     <td width="10px"></td>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                  </tr>
+                  <tr>
+                     <td width="10px"></td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                  </tr>
+                  <tr>
+                     <td width="10px"></td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                  </tr>
+               </table>
+            </div>
+            <div id="socialx" class="tab-pane fade">
+               <h3>&nbsp; Singular Socio-Political Entries</h3>
+               <div align="right" style="margin-bottom: 10px;margin-top: -40px;"><button  type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Create New Entry</button> &nbsp;</div>
+               <table width="100%" class="table table-striped">
+                  <tr>
+                     <td width="10px"></td>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                     <th>FIELD <i class="fa fa-sort"></i></th>
+                  </tr>
+                  <tr>
+                     <td width="10px"></td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                  </tr>
+                  <tr>
+                     <td width="10px"></td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                  </tr>
+               </table>
+            </div>
+         </div>
       </div>
-      
-	</div>
-</div>
-
-</body>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+         <div class="modal-dialog" style="width:65%;">
+            <!-- Modal content-->
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Create New Entry</h4>
+               </div>
+               <div class="modal-body">
+                  <ul class="nav nav-tabs">
+                     <li class="active"><a data-toggle="tab" href="#fin">Financial</a></li>
+                     <li><a data-toggle="tab" href="#infra">Infrastructure</a></li>
+                     <li><a data-toggle="tab" href="#soc">Socio-Political</a></li>
+                  </ul>
+                  <div class="tab-content">
+                     <div id="fin" class="tab-pane fade in active">
+                        <h3>New Financial Entry</h3>
+                        <table width="100%">
+                           <tr>
+                              <th width="15%">Entry #1 &nbsp;</th>
+                              <td width="80%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
+                           </tr>
+                           <tr>
+                              <th width="15%">Entry #2 &nbsp;</th>
+                              <td width="80%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
+                           </tr>
+                           <tr>
+                              <th width="15%">Entry #3 &nbsp;</th>
+                              <td width="80%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div id="infra" class="tab-pane fade">
+                        <h3>New Infrastructure Entry</h3>
+                        <table width="100%">
+                           <tr>
+                              <th width="15%">Entry #1 &nbsp;</th>
+                              <td width="80%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
+                           </tr>
+                           <tr>
+                              <th width="15%">Entry #2 &nbsp;</th>
+                              <td width="80%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
+                           </tr>
+                           <tr>
+                              <th width="15%">Entry #3 &nbsp;</th>
+                              <td width="80%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div id="soc" class="tab-pane fade">
+                        <h3>New Social-Political Entry</h3>
+                        <table width="100%">
+                           <tr>
+                              <th width="15%">Entry #1 &nbsp;</th>
+                              <td width="80%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
+                           </tr>
+                           <tr>
+                              <th width="15%">Entry #2 &nbsp;</th>
+                              <td width="80%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
+                           </tr>
+                           <tr>
+                              <th width="15%">Entry #3 &nbsp;</th>
+                              <td width="80%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
+                           </tr>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Clear</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
 </html>

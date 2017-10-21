@@ -69,7 +69,7 @@ var submitNewData = function(school, bName, bNum, abbrev, campus, address, occup
 	entry.abbreviation = updateStringField(abbrev);
 	entry.campus = updateStringField(campus);
 	entry.address = updateStringField(address);
-	entry.occupancyDate updateStringField(occupance);
+	entry.occupancyDate = updateStringField(occupance);
 	entry.constructType = updateStringField(constr);
 	entry.grossSquareFootage = updateNumberField(gsf);
 	entry.leasingType = updateStringField(lType);
