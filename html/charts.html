@@ -2,12 +2,22 @@
 <html>
 <head>
 <title>Page Title</title>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src="../js/building_data.js"></script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbK5J5ZAOl0hjPvvLSW5f48PLd61Qedpk&callback=initMap">
+    </script>
 <table width="100%">
 		<td width="1%" style="white-space:nowrap">
 			<div style="display:inline;"><img src="../images/image0.png"></div>
@@ -38,7 +48,7 @@
 			<a href="../html/data.html" style="text-decoration: none;color:black;"> <i class="fa fa-database"></i> Data</a>
 		</td>
 		<td align="left" width="14%">
-			<a href="../html/charts.html" style="text-decoration: none;color:black;"> <i class="fa fa-pie-chart"></i>
+			<a href="../html/charts.html" style="text-decoration: none;color:black;opacity:0.5;"> <i class="fa fa-pie-chart"></i>
 			Charts</a>
 		</td>
 		<td align="left" width="18%">
@@ -61,8 +71,20 @@
 <body>
 
 <div ng-app="myApp" ng-controller="myCtrl">
+	<!--	<table align="center" width="100%">
+		<tr>
+			<td style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center"> <i class="fa fa-podcast" aria-hidden="true"></i> &nbsp;[Visualizations]
+			</td>
+		</tr>
+		<tr>
+			<td style="font-family: Verdana, Helvetica, sans-serif;" align="center">[Description]
+			</td>
+		</tr>
+	</table>
+	</div> -->
 
-</div>
+	<h3>&nbsp; [Visualizations Page]</h3>
+	<div id="map"></div>
 
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Page Title</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -32,7 +33,7 @@
 			Home</a>
 		</td>
 		<td align="left" width="13%">
-			<a href="../html/about.html" style="text-decoration: none;color:black;"> <i class="fa fa-user-circle-o"></i>
+			<a href="../html/about.html" style="text-decoration: none;color:black;opacity:0.5;"> <i class="fa fa-user-circle-o"></i>
 			About</a>
 		</td>
 		<td align="left" width="13%">
@@ -62,7 +63,38 @@
 <body>
 
 <div ng-app="myApp" ng-controller="myCtrl">
-
+	<table align="center" width="100%">
+		<tr>
+			<td style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center"> <i class="fa fa-podcast" aria-hidden="true"></i> &nbsp;[What We Do?]
+			</td>
+		</tr>
+		<tr>
+			<td style="font-family: Verdana, Helvetica, sans-serif;" align="center">[Description]
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<table align="center" width="100%">
+		<tr>
+			<td style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center"> <i class="fa fa-code-fork" aria-hidden="true"></i> &nbsp;[Why We Do?]
+			</td>
+		</tr>
+		<tr>
+			<td style="font-family: Verdana, Helvetica, sans-serif;" align="center"> [Description]
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<table align="center" width="100%">
+		<tr>
+			<td style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center"> <i class="fa fa-rss" aria-hidden="true"></i> &nbsp;[How We Do?]
+			</td>
+		</tr>
+		<tr>
+			<td style="font-family: Verdana, Helvetica, sans-serif;" align="center"> [Description]
+			</td>
+		</tr>
+	</table>
 </div>
 
 </body>
