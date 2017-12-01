@@ -3,11 +3,53 @@
 <head>
 <title>Page Title</title>
     <style>
-       #map {
-        height: 400px;
-        width: 100%;
-       }
-    </style>
+			body {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 11px;
+				font-weight: 300;
+				fill: #242424;
+				text-align: center;
+				text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+				cursor: default;
+			}
+			
+			.legend {
+				font-family: 'Raleway', sans-serif;
+				fill: #333333;
+			}
+			
+			.tooltip {
+				fill: #333333;
+			}
+			#map {
+        		height: 400px;
+        		width: 100%;
+       		}
+       		.node {
+  				cursor: pointer;
+			}
+
+			.node:hover {
+  				stroke: #000;
+  				stroke-width: 1.5px;
+			}
+
+			.node--leaf {
+  				fill: white;
+			}
+
+			.label {
+  				font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  				text-anchor: middle;
+  				text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+			}
+
+			.label,
+			.node--root,
+			.node--leaf {
+  				pointer-events: none;
+			}
+	</style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
@@ -15,13 +57,16 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src="../js/building_data.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+<script> var page = "charts"; </script>
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbK5J5ZAOl0hjPvvLSW5f48PLd61Qedpk&callback=initMap">
     </script>
 <table width="100%">
 		<td width="1%" style="white-space:nowrap">
 			<div style="display:inline;"><img src="../images/image0.png"></div>
-			<div style="display:inline; white-space:nowrap;font-family: Verdana, Helvetica, sans-serif;position:relative;top:25px;">[Data Visualization Tool?]</div>
+			<div style="display:inline; white-space:nowrap;font-family: Verdana, Helvetica, sans-serif;position:relative;top:25px;">Data Visualization & Management Tool</div>
 		</td>
 		<td align="right">
 			<i class="fa fa-sign-in"></i><br>
@@ -37,7 +82,7 @@
 	<tr>
 		<td width="10px"></td>
 		<td align="left" width="13%">
-			<a href="../index.html" style="text-decoration: none;color:black;"> <i class="fa fa-home"></i>
+			<a href="../index.html" style="text-decoration: none;color:black;"> &nbsp; &nbsp; &nbsp;<i class="fa fa-home"></i>
 			Home</a>
 		</td>
 		<td align="left" width="13%">
@@ -83,8 +128,36 @@
 	</table>
 	</div> -->
 
-	<h3>&nbsp; [Visualizations Page]</h3>
 	<div id="map"></div>
+
+	<h3>&nbsp; Data Visualizations </h3>
+
+	<hr>
+
+	<p>[Information about this particular graph]</p>
+
+	<div id="packX">
+	<div class="packChart"></div>
+	<script src="../js/packView.js"></script>
+	<script src="../js/packData.js"></script>
+	</div>
+	<hr>
+
+	<p>[Information about this particular graph]</p>
+
+	<div id="radioX">
+	<div class="radarChart"></div>
+	<script src="../js/radarChart.js"></script>
+	<script src="../js/radarView.js"></script>
+	</div>
+	<hr>
+
+	<p>[Information about this particular graph]</p>
+
+	<div id="chordX">
+	<script src="../js/chordData.js"></script>
+	<script src="../js/chordView.js"></script>
+	</div>
 
 </body>
 </html>

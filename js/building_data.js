@@ -130,6 +130,9 @@ var updateStringField = function(string){
 
 function initMap() {
         var uluru = {lat: 37.2284, lng: -80.4234};
+        if(page == "contact"){
+        	uluru = {lat: 37.227695, lng: -80.413021};
+        }
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 15,
           center: uluru
