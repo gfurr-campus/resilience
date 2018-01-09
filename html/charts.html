@@ -50,6 +50,7 @@
   				pointer-events: none;
 			}
 	</style>
+<link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
@@ -58,7 +59,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src="../js/building_data.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-	<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+					<script type="text/javascript" src="../js/financial_rc.js"></script>
+
 <script> var page = "charts"; </script>
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbK5J5ZAOl0hjPvvLSW5f48PLd61Qedpk&callback=initMap">
@@ -130,9 +134,38 @@
 
 	<div id="map"></div>
 
-	<h3>&nbsp; Data Visualizations </h3>
+	<ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#finance">Financial</a></li>
+            <li><a data-toggle="tab" href="#infrastructure">Infrastructure</a></li>
+         </ul>
+         <div class="tab-content">
+            <div id="finance" class="tab-pane fade in active">
+            		<h3>&nbsp; Financial Resilience By University </h3>
 
-	<hr>
+					<div id="chartA" style="margin: 0 auto;"></div>
+					<script src="../js/rc.js"></script>
+					<script> drawWithData("chartA"); </script>
+					<hr>
+            </div>
+            <div id="infrastructure" class="tab-pane fade">
+            		<h3>&nbsp; Structural Resilience By University </h3>
+            		
+
+					<div id="chartB"></div>
+					<script src="../js/rc.js"></script> 
+					<script type="text/javascript" src="../js/structural_rc.js"></script>
+					<script> createWithData("chartB"); </script>
+					<hr>
+            </div>
+         </div>
+      </div>
+
+
+
+
+			
+
+	<!-- <hr>
 
 	<p>[Information about this particular graph]</p>
 
@@ -157,7 +190,7 @@
 	<div id="chordX">
 	<script src="../js/chordData.js"></script>
 	<script src="../js/chordView.js"></script>
-	</div>
+	</div> -->
 
 </body>
 </html>
