@@ -145,5 +145,6 @@ function initMap() {
 
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
-    $scope.name= "John";
+    $scope.roles = ["Master (Full Access)","Administrator (Read/Write Access)","Guest (Read-Only)"];
+    $scope.selectedRole = $scope.roles[$scope.roles.length-1]; 
 });

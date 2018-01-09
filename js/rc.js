@@ -1,5 +1,3 @@
-console.log('???');
-
 var RadarChart = {
   draw: function(id, d, options){
   var cfg = {

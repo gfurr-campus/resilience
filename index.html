@@ -8,12 +8,17 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="js/base.js"></script>
 <script src="js/building_data.js"></script>
 <table width="100%">
 	<tr>
 		<td width="1%" style="white-space:nowrap">
 			<div style="display:inline;"><img src="images/image0.png"></div>
-			<div style="display:inline; white-space:nowrap;font-family: Verdana, Helvetica, sans-serif;position:relative;top:25px;">Data Visualization & Management Tool</div>
+			<div style="display:inline; white-space:nowrap;font-family: Verdana, Helvetica, sans-serif;position:relative;top:25px;">Data Visualization & Management Tool
+				<i style="color:#00ace6" class="fa fa-address-card-o" aria-hidden="true"></i>
+				<i style="color:#00cc66" class="fa fa-id-card-o" aria-hidden="true"></i>
+				<i style="color:black" class="fa fa-id-card" aria-hidden="true"></i>
+			</div>
 		</td>
 		<td align="right">
 			<i class="fa fa-sign-in" data-toggle="modal" data-target="#loginModal"></i><br>
@@ -60,9 +65,8 @@
 </table>
 <hr style="margin:5px;">
 </head>
-<body>
-
-<div ng-app="myApp" ng-controller="myCtrl">
+<body ng-app="myApp" ng-controller="myCtrl">
+<div>
 <img src="images/image1.jpg" width="102%" style="margin-left:-1%; opacity: 0.5;"></img>
 	<hr style="margin:20px;">
 	<table align="center" width="100%">
@@ -227,6 +231,53 @@
 </div>
 
 <!-- Modal -->
+  <div class="modal fade" id="signupModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Sign Up</h4>
+        </div>
+        <div class="modal-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p>
+          <table width="100%">
+          	<tr>
+          		<th width="20%">First Name</th>
+          		<th width="80%"><input style="width:100%"></input></th>
+          	</tr>
+          	<tr>
+          		<th width="20%">Last Name</th>
+          		<th width="80%"><input style="width:100%"></input></th>
+          	</tr>
+          	<tr>
+          		<th width="20%">Email Address</th>
+          		<th width="80%"><input style="width:100%"></input></th>
+          	</tr>
+          	<tr>
+          		<th width="20%">Password</th>
+          		<th width="80%"><input style="width:100%"></input></th>
+          	</tr>
+          	<tr>
+          		<th width="20%">Role (Request)</th>
+          		<td>
+          			<select ng-model="selectedRole" ng-options="x for x in roles" style="width:100%">
+					</select>
+          		</td>
+          	</tr>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Modal -->
   <div class="modal fade" id="loginModal" role="dialog">
     <div class="modal-dialog">
     
@@ -238,8 +289,19 @@
         </div>
         <div class="modal-body">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p>
+          <table width="100%">
+          	<tr>
+          		<th width="20%">Email Address</th>
+          		<th width="80%"><input style="width:100%"></input></th>
+          	</tr>
+          	<tr>
+          		<th width="20%">Password</th>
+          		<th width="80%"><input style="width:100%"></input></th>
+          	</tr>
+          </table>
         </div>
         <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -258,32 +320,11 @@
           <h4 class="modal-title">Log Out</h4>
         </div>
         <div class="modal-body">
-          <p>Are you sure that you want to log out of <div>[username]<div>?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Yes</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-
-  <!-- Modal -->
-  <div class="modal fade" id="signupModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Create Account</h4>
-        </div>
-        <div class="modal-body">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Yes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
         </div>
       </div>
       
@@ -298,7 +339,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Help</h4>
+          <h4 class="modal-title">Need Help?</h4>
         </div>
         <div class="modal-body">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p>
