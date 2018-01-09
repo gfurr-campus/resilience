@@ -1,4 +1,4 @@
-console.log("I'm here...");
+/*console.log("I'm here...");
 
 var data = {
 	school: "",
@@ -126,7 +126,7 @@ var updateStringField = function(string){
 	}else{
 		return string;
 	}
-}
+}*/
 
 function initMap() {
         var uluru = {lat: 37.2284, lng: -80.4234};

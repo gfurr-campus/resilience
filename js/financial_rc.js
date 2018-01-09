@@ -1,5 +1,3 @@
-var all_fin = []; // store data here
-
 var w = 500,
 	h = 500;
 
@@ -9,7 +7,7 @@ var colorscale = d3.scale.category10();
 var LegendOptions = ['School A','School B', "School C", "School D"];
 
 //Data // read from fin_data_fb
-var d = [
+var financial_data0 = [
 		  [{axis:"Endowment per Student",value:1000*Math.random(),school:"School A"},
 		  {axis:"Tuition/Fees",value:1000*Math.random(),school:"School A"},
 		  {axis:"Grants/Contracts",value:1000*Math.random(),school:"School A"},
@@ -77,7 +75,8 @@ function drawWithData(target,index){ // chart = #chartA
 	var all_div = document.createElement('DIV'); all_div.id = "all";
 	var hr1 = document.createElement('hr'); all_div.appendChild(hr1);
 	var all_button = document.createElement('button'); all_button.style.margin = "10px";
-	var all_node = document.createTextNode('SHOW ALL'); all_button.appendChild(all_node); all_button.className = "btn btn-primary"; all_div.appendChild(all_button);
+	var all_node = document.createTextNode('SHOW ALL'); all_button.appendChild(all_node); 
+	all_button.className = "btn btn-primary"; all_div.appendChild(all_button);
 
 	all_button.onclick = function(){;
 		var x = document.getElementById("all");
@@ -86,12 +85,12 @@ function drawWithData(target,index){ // chart = #chartA
 	}
 
 	if(index != undefined){
-		d.splice(index, 1);
+		financial_data0.splice(index, 1);
 	}
 
-	for(var i = 0; i < d.length; i++){
+	for(var i = 0; i < financial_data0.length; i++){
 
-		var data = d[i][0].school;
+		var data = financial_data0[i][0].school;
 		var button = document.createElement('button'); button.style.margin = "10px";
 		var node = document.createTextNode(data); button.appendChild(node);
 		button.className = "btn btn-default "+data+" radar-chart-serie"+i;
@@ -99,6 +98,7 @@ function drawWithData(target,index){ // chart = #chartA
 		//plot.id = "???";
 		button.ondblclick = function(){
 			var fid = this.classList[this.classList.length - 1];
+            console.log(fid);
 			var e = document.getElementById(fid);
 			e.remove();
 
@@ -136,7 +136,7 @@ function drawWithData(target,index){ // chart = #chartA
 	all_div.appendChild(hr2);
 
 
-	RadarChart.draw("#"+target, d, mycfg);
+	RadarChart.draw("#"+target, financial_data0, mycfg);
 
 	for(var i = 0; i < document.getElementsByTagName('svg').length; i++){
 		if(document.getElementsByTagName('svg')[i].id.length == 0){
@@ -150,14 +150,14 @@ function drawWithData(target,index){ // chart = #chartA
 	/////////// Initiate legend ////////////////
 	////////////////////////////////////////////
 
-	var svg = d3.select('#chartA')
+	var svg_f = d3.select('#chartA')
 	.selectAll('svg')
 	.append('svg')
 	.attr("width", w+300)
 	.attr("height", h)
 
 	//Create the title for the legend
-	var text = svg.append("text")
+	var text_f = svg_f.append("text")
 	.attr("class", "title")
 	.attr('transform', 'translate(90,0)') 
 	.attr("x", w - 70)
@@ -167,14 +167,14 @@ function drawWithData(target,index){ // chart = #chartA
 	.text("How univerisities spend their money");
 
 	//Initiate Legend	
-	var legend = svg.append("g")
+	var legend_f = svg_f.append("g")
 	.attr("class", "legend")
 	.attr("height", 100)
 	.attr("width", 200)
 	.attr('transform', 'translate(90,20)') 
 	;
 	//Create colour squares
-	legend.selectAll('rect')
+	legend_f.selectAll('rect')
 	  .data(LegendOptions)
 	  .enter()
 	  .append("rect")
@@ -185,7 +185,7 @@ function drawWithData(target,index){ // chart = #chartA
 	  .style("fill", function(d, i){ return colorscale(i);})
 	  ;
 	//Create text next to squares
-	legend.selectAll('text')
+	legend_f.selectAll('text')
 	  .data(LegendOptions)
 	  .enter()
 	  .append("text")
