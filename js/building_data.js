@@ -147,4 +147,116 @@ var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
     $scope.roles = ["Master (Full Access)","Administrator (Read/Write Access)","Guest (Read-Only)"];
     $scope.selectedRole = $scope.roles[$scope.roles.length-1]; 
+
+    $scope.newUser = {
+    	fn : "",
+    	ln : "",
+    	e : "",
+    	pw : "",
+    	r : $scope.selectedRole
+    }
+
+   $scope.oldUser = {
+    	e : "",
+    	pw : ""
+    }
+
+    $scope.CurrentUser = null;
+
+    $scope.signedInRole = {
+    	isguest : false,
+    	isadmin : false,
+    	ismaster : false
+    }
+
+    $scope.users = [];
+
+    $scope.ng_createUserValid = function(){
+    	if($scope.newUser.fn.length > 1 && $scope.newUser.ln.length > 1 && $scope.newUser.e.includes("@") && $scope.newUser.e.includes(".") && $scope.newUser.pw.length >= 6){
+    		return true;
+    	}else{
+    		return false;
+    	}
+    }
+
+    $scope.ng_signInValid = function(){
+    	if($scope.oldUser.e.includes("@") && $scope.oldUser.e.includes(".") && $scope.oldUser.pw.length >= 6){
+    		return true;
+    	}else{
+    		return false;
+    	}
+    }
+
+    $scope.ng_createUser = function(){
+    	createUser($scope.newUser.fn,$scope.newUser.ln,$scope.newUser.e,$scope.newUser.pw,$scope.newUser.r);
+    }
+
+    $scope.ng_signIn = function(){
+    	signIn($scope.oldUser.e,$scope.oldUser.pw);
+    }
+
+    $scope.ng_signOut = function(){
+    	signOut();
+    }
+
+    function getUsrRole(obj,key){
+    	if(obj.Role == "Guest (Read-Only)" && key == "isguest"){
+    		return true;
+    	}else if(obj.Role == "Administrator (Read/Write Access)" && key == "isadmin"){
+    		return true;
+    	}else if(obj.Role == "Master (Full Access)" && key == "ismaster"){
+    		return true;
+    	}else{
+    		return false;
+    	}
+    }
+
+    function getCurrentUser(){
+		firebase.auth().onAuthStateChanged(function(user) {
+  		if (user) {
+    		return firebase.database().ref('/users/' + genID(user.email)).once('value').then(function(snapshot) {
+      			var usr = snapshot.val();
+      			$scope.$apply(function(){
+      				$scope.signedInRole.ismaster = getUsrRole(usr,'ismaster');
+      				$scope.signedInRole.isadmin = getUsrRole(usr,'isadmin');
+      				$scope.signedInRole.isguest = getUsrRole(usr,'isguest');
+      				$scope.CurrentUser = usr;
+      			});
+    			// ...
+    		});
+  		}});
+	}
+
+	$scope.userID = function(e){
+		var ide = e.usr;
+		return (ide.split("@"))[0];
+	}
+
+	function getUsers(){
+		return firebase.database().ref('/users/').once('value').then(function(snapshot){
+			var usrs = snapshot.val();
+			for(var k in usrs){
+				$scope.$apply(function(){
+      				$scope.users.push({usr: k, name: usrs[k].FirstName+" "+usrs[k].LastName, currentRole: usrs[k].Role, requested: usrs[k].RoleRequested});
+      			});
+			}
+			console.log($scope.users);
+		});
+	}
+
+	function changeUserRole(){
+
+	}
+
+	function approveRoleChange(){
+
+	}
+
+	function declineRoleChange(){
+
+	}
+
+	getCurrentUser();
+	getUsers();
+
 });

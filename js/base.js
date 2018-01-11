@@ -11,30 +11,46 @@
 
 var database = firebase.database();
 
+function genID(string){
+  var s = string; var c = 0;
+  while(s.includes(".")){ 
+    c = c + 1; // Fail check
+    s = s.replace(".","");
+    console.log(s);
+    if(c > 100){
+      console.log("Error occurred...");
+    }
+  }
+  return s;
+}
+
 function createUser(firstname,lastname,email,password,role) {
   // Authenticate
+  console.log("called");
   firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
-    database.ref('users/' + email).set({
-      FirstName: firstname,
-      LastName: lastname,
-      Password: password, // Maybe remove later?
-      RoleRequested: role,
-      Email: email,
+      console.log("Success!");
+      database.ref('users/' + genID(email)).set({
+        FirstName: firstname,
+        LastName: lastname,
+        Password: password, // Maybe remove later?
+        RoleRequested: role,
+        Email: email,
       Role: "Guest (Read-Only)"
     }).then(function(){
-      // location.reload();
+      console.log("Successfully created account!");
+      location.reload();
     });
   }).catch(function(error) {
-    // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorCode+":"+errorMessage);
     // ...
   });
 }
 
 function signIn(email,password){
   firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
-    // location.reload();
+    location.reload();
   }).catch(function(error) {
     // Handle Errors here.
   var errorCode = error.code;
@@ -45,8 +61,7 @@ function signIn(email,password){
 
 function signOut(){
   firebase.auth().signOut().then(function() {
-    // Sign-out successful.
-    // location.reload();
+    location.reload();
   }).catch(function(error) {
     // An error happened.
   });

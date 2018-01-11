@@ -15,9 +15,9 @@
 		<td width="1%" style="white-space:nowrap">
 			<div style="display:inline;"><img src="images/image0.png"></div>
 			<div style="display:inline; white-space:nowrap;font-family: Verdana, Helvetica, sans-serif;position:relative;top:25px;">Data Visualization & Management Tool
-				<i style="color:#00ace6" class="fa fa-address-card-o" aria-hidden="true"></i>
-				<i style="color:#00cc66" class="fa fa-id-card-o" aria-hidden="true"></i>
-				<i style="color:black" class="fa fa-id-card" aria-hidden="true"></i>
+				<i ng-show ="signedInRole.isguest" style="color:#00ace6" class="fa fa-address-card-o" aria-hidden="true"></i>
+				<i ng-show = "signedInRole.isadmin" style="color:#00cc66" class="fa fa-id-card-o" aria-hidden="true"></i>
+				<i ng-show = "signedInRole.ismaster" ng-show ="isguest" style="color:black" class="fa fa-id-card" aria-hidden="true"></i>
 			</div>
 		</td>
 		<td align="right">
@@ -245,31 +245,31 @@
           <table width="100%">
           	<tr>
           		<th width="20%">First Name</th>
-          		<th width="80%"><input style="width:100%"></input></th>
+          		<td width="80%"><input style="width:100%" ng-model="newUser.fn"></input></td>
           	</tr>
           	<tr>
           		<th width="20%">Last Name</th>
-          		<th width="80%"><input style="width:100%"></input></th>
+          		<td width="80%"><input style="width:100%" ng-model="newUser.ln"></input></td>
           	</tr>
           	<tr>
           		<th width="20%">Email Address</th>
-          		<th width="80%"><input style="width:100%"></input></th>
+          		<td width="80%"><input style="width:100%" ng-model="newUser.e"></input></td>
           	</tr>
           	<tr>
           		<th width="20%">Password</th>
-          		<th width="80%"><input style="width:100%"></input></th>
+          		<td width="80%"><input style="width:100%" ng-model="newUser.pw"></input></td>
           	</tr>
           	<tr>
           		<th width="20%">Role (Request)</th>
           		<td>
-          			<select ng-model="selectedRole" ng-options="x for x in roles" style="width:100%">
+          			<select ng-model="newUser.r" ng-options="x for x in roles" style="width:100%">
 					</select>
           		</td>
           	</tr>
           </table>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+          <button type="button"  ng-disabled="!ng_createUserValid()" ng-click="ng_createUser()" class="btn btn-primary" data-dismiss="modal">Submit</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -292,16 +292,16 @@
           <table width="100%">
           	<tr>
           		<th width="20%">Email Address</th>
-          		<th width="80%"><input style="width:100%"></input></th>
+          		<td width="80%"><input style="width:100%" ng-model="oldUser.e"></input></td>
           	</tr>
           	<tr>
           		<th width="20%">Password</th>
-          		<th width="80%"><input style="width:100%"></input></th>
+          		<td width="80%"><input style="width:100%" ng-model="oldUser.pw"></input></td>
           	</tr>
           </table>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+          <button type="button" ng-disabled="!ng_signInValid()" ng-click="ng_signIn()" class="btn btn-primary" data-dismiss="modal">Submit</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -323,7 +323,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Yes</button>
+          <button type="button" ng-click="ng_signOut()" class="btn btn-danger" data-dismiss="modal">Yes</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
         </div>
       </div>
