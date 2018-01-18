@@ -65,6 +65,7 @@
 <body ng-app="myApp" ng-controller="myCtrl">
 
 <div>
+	<br>
 	<table align="center" width="80%">
 		<tr>
 			<td style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center"> <i class="fa fa-gears" aria-hidden="true"></i> &nbsp; Settings &nbsp; <i class="fa fa-gears" aria-hidden="true"></i>
@@ -75,72 +76,59 @@
 			</td>
 		</tr>
 	</table>
-	<br>
-	<table align="center" width="50%">
+	<hr>
+	<h2 style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center"> &nbsp; Profile Settings &nbsp; </h2>
+	<table align="center" width="85%">
 		<tr>
-			<td width="75%">
+			<th width="80%" colspan="4">
 				<div class="btn-group btn-group-justified">
-  					<a href="#" class="btn btn-primary">Setting Option</a>
-  					<a href="#" class="btn btn-default">Option 1</a>
-  					<a href="#" class="btn btn-default disabled">Option 2</a>
-  					<a href="#" class="btn btn-default disabled">Option 3</a>
+  					<a href="#" class="btn btn-primary" style="width:15%"><b>Action</b></a>
+  					<a href="#" class="btn btn-primary" style="width:15%"><b>Current</b></a>
+  					<a href="#" class="btn btn-primary" style="width:55%"><b>New</b></a>
+  					<a href="#" class="btn btn-primary" style="width:15%"><b>Submission</b>s</a>
 				</div>
-			</td>
+			</th>
 		</tr>
-	</table>
-	<br>
-	<table align="center" width="50%">
 		<tr>
-			<td width="75%">
-				<div class="btn-group btn-group-justified">
-  					<a href="#" class="btn btn-primary">Setting Option</a>
-  					<a href="#" class="btn btn-default">Option 1</a>
-  					<a href="#" class="btn btn-default disabled">Option 2</a>
-  					<a href="#" class="btn btn-default disabled">Option 3</a>
-				</div>
+			<th style="width:15%;text-align: center;">Request Role Change:</th>
+			<th style="width:15%;text-align: center;" align="center">[Guest]</th>
+			<td style="width:55%;text-align: center;">
+				<form>
+					<label>Choose Option:  &nbsp;</label>
+    				<label class="radio-inline">
+      					<input type="radio" name="optradio">Master
+    				</label>
+    				<label class="radio-inline">
+      					<input type="radio" name="optradio">Administrator
+    				</label>
+    				<label class="radio-inline">
+      					<input type="radio" name="optradio">Guest
+    				</label>
+  				</form>
 			</td>
+			<td style="width:15%;text-align: center; padding:5px;"><button class="btn btn-danger btn-sm" style="width:100%">Send</button></td>
 		</tr>
-	</table>
-	<br>
-	<table align="center" width="50%">
 		<tr>
-			<td width="75%">
-				<div class="btn-group btn-group-justified">
-  					<a href="#" class="btn btn-primary">Setting Option</a>
-  					<a href="#" class="btn btn-default">Option 1</a>
-  					<a href="#" class="btn btn-default disabled">Option 2</a>
-  					<a href="#" class="btn btn-default disabled">Option 3</a>
-				</div>
-			</td>
+			<th style="width:15%;text-align: center;">Change Username:</th>
+			<th style="width:15%;text-align: center;" align="center">(username)</th>
+			<td style="width:55%;text-align: center;"><input style="width:99%" placeholder="Enter New Username..."></input></td>
+			<td style="width:15%;text-align: center; padding:5px;"><button class="btn btn-danger btn-sm" style="width:100%">Change</button></td>
 		</tr>
-	</table>
-	<br>
-	<table align="center" width="50%">
 		<tr>
-			<td width="75%">
-				<div class="btn-group btn-group-justified">
-  					<a href="#" class="btn btn-primary">Setting Option</a>
-  					<a href="#" class="btn btn-default">Option 1</a>
-  					<a href="#" class="btn btn-default disabled">Option 2</a>
-  					<a href="#" class="btn btn-default disabled">Option 3</a>
-				</div>
-			</td>
+			<th style="width:15%;text-align: center;">Change Password:</th>
+			<th style="width:15%;text-align: center;" align="center">*********</th>
+			<td style="width:55%;text-align: center;"><input style="width:99%" placeholder="Enter New Password..."></input></td>
+			<td style="width:15%;text-align: center; padding:5px;"><button class="btn btn-danger btn-sm" style="width:100%">Change</button></td>
 		</tr>
-	</table>
-	<br>
-	<table align="center" width="50%">
 		<tr>
-			<td width="75%">
-				<div class="btn-group btn-group-justified">
-  					<a href="#" class="btn btn-primary">Setting Option</a>
-  					<a href="#" class="btn btn-default">Option 1</a>
-  					<a href="#" class="btn btn-default disabled">Option 2</a>
-  					<a href="#" class="btn btn-default disabled">Option 3</a>
-				</div>
-			</td>
+			<th style="width:15%;text-align: center;">Deactivate Account:</th>
+			<th style="width:15%;text-align: center;" align="center">(email)</th>
+			<td style="width:55%;text-align: center;"><input style="width:99%" placeholder="Enter Current Password..."></input></td>
+			<td style="width:15%;text-align: center; padding:5px;"><button class="btn btn-danger btn-sm" style="width:100%">Change</button></td>
 		</tr>
 	</table>
 	<hr>
+	<h2 style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center"> &nbsp; User Management &nbsp; </h2>
 	<table align="center" width="85%">
 		<tr>
 			<th width="75%">
@@ -172,6 +160,7 @@
 		</tr>
 	</table>
 	<hr>
+	<h2 style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center"> &nbsp; Questions/Complaints &nbsp; </h2>
 	<table align="center" width="85%">
 		<tr>
 			<th width="75%">
@@ -192,6 +181,28 @@
   			</th>
 		</tr>
 	</table>
+	<hr>
+	<h2 style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center"> &nbsp; Data Management &nbsp; </h2>
+	<table align="center" width="85%">
+		<tr>
+			<th width="80%" colspan="4">
+				<div class="btn-group btn-group-justified">
+  					<a href="#" class="btn btn-primary" style="width:15%"><b>Create Backup</b></a>
+  					<a href="#" class="btn btn-info" style="width:15%"><b>View Last Backup</b></a>
+  					<a href="#" class="btn btn-success" style="width:15%"><b>View Full Backup</b></a>
+  					<a href="#" class="btn btn-warning" style="width:15%"><b>Clear Last Backup</b></a>
+  					<a href="#" class="btn btn-danger" style="width:15%"><b>Clear All Data</b></a>
+				</div>
+			</th>
+		</tr>
+		<tr>
+			<th width="80%" colspan="4">
+				<textarea style="width:100%;text-align: center;padding:100px;" placeholder="..."></textarea>
+			</th>
+		</tr>
+	</table>
+	<hr>
+	<a href="https://github.com/gfurr-campus/resilience" target="_blank"><h2 style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center"> Repository </h2></a>
 	<br>
 </div>
 

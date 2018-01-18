@@ -256,7 +256,43 @@ app.controller('myCtrl', function($scope) {
 
 	}
 
-	getCurrentUser();
-	getUsers();
+	//getCurrentUser();
+	//getUsers();
+
+	function calcReservesRatio(){
+		/*
+			The primary reserves ratio is calculated as follows:
+			(Total Net Assets – Restricted Net Assets – Property, Plant, and Equipment + Long-term Debt) / (Total Expenses)
+		*/
+	}
+
+
+	function calcViabilityRatio(){
+		/*
+			The Viability Ratio is calculated as calculated as:
+			(Total Net Assets – Restricted Net Assets – Property, Plant, and Equipment + Long-term Debt) / Long-term Debt
+		*/
+	}
+
+	function fadeEffect(iden){
+		$(iden).mouseover(function(){
+    	$(iden).css("opacity", "0.50");
+		});
+		$(iden).mouseout(function(){
+    	$(iden).css("opacity", "1.00");
+		});
+	}
+
+	fadeEffect(".fa-sign-in");
+	fadeEffect(".fa-sign-out");
+	fadeEffect(".fa-edit");
+	fadeEffect(".fa-question-circle");
+	fadeEffect("#home");
+	fadeEffect("#about");
+	fadeEffect("#data");
+	fadeEffect("#charts");
+	fadeEffect("#parts");
+	fadeEffect("#settings");
+	fadeEffect("#contact");
 
 });
