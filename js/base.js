@@ -32,7 +32,7 @@ function createUser(firstname,lastname,email,password,role) {
       database.ref('users/' + genID(email)).set({
         FirstName: firstname,
         LastName: lastname,
-        Password: password, // Maybe remove later?
+        Password: password,
         RoleRequested: role,
         Email: email,
       Role: "Guest (Read-Only)"

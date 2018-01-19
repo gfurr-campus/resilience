@@ -295,4 +295,8 @@ app.controller('myCtrl', function($scope) {
 	fadeEffect("#settings");
 	fadeEffect("#contact");
 
+
+    $scope.leed = ["(none)","Bronze","Silver","Gold","Platinum"];
+    $scope.selectedLEED = $scope.leed[0];
+
 });

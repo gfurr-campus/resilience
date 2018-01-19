@@ -61,13 +61,15 @@
       </table>
       <hr style="margin:5px;">
    </head>
-   <body>
-      <div ng-app="myApp" ng-controller="myCtrl">
+   <body ng-app="myApp" ng-controller="myCtrl">
+      <div>
          <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#finance">Financial</a></li>
             <li><a data-toggle="tab" href="#infrastructure">Infrastructure</a></li>
+            <li><a data-toggle="tab" href="#social">Socio-Political</a></li>
             <li><a data-toggle="tab" href="#financex">Financial*</a></li>
             <li><a data-toggle="tab" href="#infrastructurex">Infrastructure*</a></li>
+            <li><a data-toggle="tab" href="#socialx">Socio-Political*</a></li>
          </ul>
          <div class="tab-content">
             <div id="finance" class="tab-pane fade in active">
@@ -162,8 +164,19 @@
                   </tr>
                </table>
             </div>
+            <div id="social" class="tab-pane fade">
+               <h3>&nbsp; Aggregated Socio-Political Entries</h3>
+               <div align="right" style="margin-bottom: 10px;margin-top: -40px;"><button  type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Create New Entry</button> &nbsp;</div>
+               <div style="width:98%;margin: 0 auto;" align="left"><p style="font-family: Verdana, Helvetica, sans-serif;"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p></div>
+               <table width="100%" class="table table-striped">
+                  <tr>
+                     <td width="10px"></td>
+                     <th> TBD <i class="fa fa-sort"></i></th>
+                  </tr>
+               </table>
+            </div>
             <div id="financex" class="tab-pane fade">
-               <h3>&nbsp; Singular Financial Data</h3>
+               <h3>&nbsp; Disaggregated Financial Data</h3>
                <div align="right" style="margin-bottom: 10px;margin-top: -40px;"><button  type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Create New Entry</button> &nbsp;</div>
                <div style="width:98%;margin: 0 auto;" align="left"><p style="font-family: Verdana, Helvetica, sans-serif;"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p></div>
                <table width="100%" class="table table-striped">
@@ -218,7 +231,7 @@
                </table>
             </div>
             <div id="infrastructurex" class="tab-pane fade">
-               <h3>&nbsp; Singular Infrastructure Entries</h3>
+               <h3>&nbsp; Disaggregated  Infrastructure Entries</h3>
                <div align="right" style="margin-bottom: 10px;margin-top: -40px;"><button  type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Create New Entry</button> &nbsp;</div>
                <div style="width:98%;margin: 0 auto;" align="left"><p style="font-family: Verdana, Helvetica, sans-serif;"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p></div>
                <table width="100%" class="table table-striped">
@@ -257,6 +270,17 @@
                   </tr>
                </table>
             </div>
+            <div id="socialx" class="tab-pane fade">
+               <h3>&nbsp; Disaggregated Socio-Political Entries</h3>
+               <div align="right" style="margin-bottom: 10px;margin-top: -40px;"><button  type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Create New Entry</button> &nbsp;</div>
+               <div style="width:98%;margin: 0 auto;" align="left"><p style="font-family: Verdana, Helvetica, sans-serif;"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p></div>
+               <table width="100%" class="table table-striped">
+                  <tr>
+                     <td width="10px"></td>
+                     <th> TBD <i class="fa fa-sort"></i></th>
+                  </tr>
+               </table>
+            </div>
          </div>
       </div>
 
@@ -280,10 +304,24 @@
                         <h3>New Financial Entry</h3>
                         <table width="100%">
                            <tr>
+                              <th  style="background:#f2f2f2;" colspan="2">UNIVERSITY AFFILIATION</th>
+                           </tr>
+                           <tr>
+                              <th width="30%">University Name &nbsp;</th>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
+                           </tr>
+                           <tr style="height:15px"></tr>
+                           <tr>
                               <th  style="background:#f2f2f2;" colspan="2">ENDOWMENT</th>
                            </tr>
                            <tr>
-                              <th width="30%">Endowment/Student &nbsp;</th>
+                              <th width="30%">Total Endowment &nbsp;</th>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
+                           </tr>
+                           <tr>
+                              <th width="30%">Total Students &nbsp;</th>
                               <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
@@ -327,12 +365,12 @@
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                            <tr>
-                              <th width="30%">Net of Depreciation &nbsp;</th>
+                              <th width="30%">Capital Assets Net for Depreciation &nbsp;</th>
                               <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                            <tr>
-                              <th width="30%">Long-term Debt &nbsp;</th>
+                              <th width="30%">Long-Term Debt for Property, Plant, and Equipment &nbsp;</th>
                               <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
@@ -357,36 +395,43 @@
                         <h3>New Infrastructure Entry</h3>
                         <table width="100%">
                            <tr>
+                              <th  style="background:#f2f2f2;" colspan="2">UNIVERSITY AFFILIATION</th>
+                           </tr>
+                           <tr>
+                              <th width="30%">University Name &nbsp;</th>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
+                           </tr>
+                           <tr style="height:15px"></tr>
+                           <tr>
                               <th  style="background:#f2f2f2;" colspan="2">BUILDING INFORMATION</th>
                            </tr>
                            <tr>
-                              <th width="15%">Affiliation &nbsp;</th>
-                              <td width="80%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <th width="15%">Building Name &nbsp;</th>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                            <tr>
-                              <th width="15%">Name &nbsp;</th>
-                              <td width="80%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <th width="15%">Year Built &nbsp;</th>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                            <tr>
-                              <th width="15%">Year &nbsp;</th>
-                              <td width="80%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <th width="15%">Facilities Condition Index &nbsp;</th>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                            <tr>
-                              <th width="15%">FCI &nbsp;</th>
-                              <td width="80%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <th width="15%">Gross Square Footage &nbsp;</th>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                            <tr>
-                              <th width="15%">GSF &nbsp;</th>
-                              <td width="80%"><input style="width:100%;margin-bottom:5px;"></td>
-                              <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
-                           </tr>
-                           <tr>
-                              <th width="15%">LEED &nbsp;</th>
-                              <td width="80%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <th width="15%">LEED Certification &nbsp;</th>
+                              <td width="65%">
+                                 <select style="width:100%;margin-bottom:5px;" ng-model="selectedLEED" ng-options="x for x in leed" style="width:100%">
+                                 </select>
+                                 </td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                         </table>
