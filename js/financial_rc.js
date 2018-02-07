@@ -1,62 +1,46 @@
 var w = 500,
 	h = 500;
 
+function equate(value,max){
+	console.log(value,max);
+	return value * max;
+}
+
 var colorscale = d3.scale.category10();
 
 //Legend titles
 var LegendOptions = ['School A','School B', "School C", "School D"];
 
+function findat(){
+	//console.log("poop");
+	//var thing = null;
+	return firebase.database().ref("financial_data").once('value').then(function(snapshot){
+		var x = snapshot.val();
+		var list = [];
+		for(var school in x){
+			list.push(
+				[{axis: "Endowment/Student", value: x[school].endowmentPerStudent, school: school},
+				{axis:"Primary Reserves Ratio", value: x[school].primaryReservesRatio, school: school},
+		  		{axis:"Viability Ratio",value: x[school].viabilityRatio,school: school}]
+			);
+		}
+		thing = list;
+		return list;
+	})
+	//console.log(thing);
+}
+var financial_data0 = null;
+//findat().then(result => financial_data0 = result);
+//console.log(findat());
+
 //Data // read from fin_data_fb
-var financial_data0 = [
-		  [{axis:"Endowment per Student",value:1000*Math.random(),school:"School A"},
-		  {axis:"Tuition/Fees",value:1000*Math.random(),school:"School A"},
-		  {axis:"Grants/Contracts",value:1000*Math.random(),school:"School A"},
-		  {axis:"State Appropriations",value:1000*Math.random(),school:"School A"},
-		  {axis:"Auxiliary Enterprises",value:1000*Math.random(),school:"School A"},
-		  {axis:"Total Net Assets",value:1000*Math.random(),school:"School A"},
-		  {axis:"Restricted Net Assests ",value:1000*Math.random(),school:"School A"},
-		  {axis:"Net of Depreciation",value:1000*Math.random(),school:"School A"},
-		  {axis:"Long-term Debt",value:1000*Math.random(),school:"School A"},
-		  {axis:"Total Expenses",value:1000*Math.random(),school:"School A"},
-		  {axis:"Operating Revenues",value:1000*Math.random(),school:"School A"},
-		  {axis:"Operating Expenses",value:1000*Math.random(),school:"School A"}],
-		  [{axis:"Endowment per Student",value:1000*Math.random(),school:"School B"},
-		  {axis:"Tuition/Fees",value:1000*Math.random(),school:"School B"},
-		  {axis:"Grants/Contracts",value:1000*Math.random(),school:"School B"},
-		  {axis:"State Appropriations",value:1000*Math.random(),school:"School B"},
-		  {axis:"Auxiliary Enterprises",value:1000*Math.random(),school:"School B"},
-		  {axis:"Total Net Assets",value:1000*Math.random(),school:"School B"},
-		  {axis:"Restricted Net Assests ",value:1000*Math.random(),school:"School B"},
-		  {axis:"Net of Depreciation",value:1000*Math.random(),school:"School B"},
-		  {axis:"Long-term Debt",value:1000*Math.random(),school:"School B"},
-		  {axis:"Total Expenses",value:1000*Math.random(),school:"School B"},
-		  {axis:"Operating Revenues",value:1000*Math.random(),school:"School B"},
-		  {axis:"Operating Expenses",value:1000*Math.random(),school:"School B"}],
-		  [{axis:"Endowment per Student",value:1000*Math.random(),school:"School C"},
-		  {axis:"Tuition/Fees",value:1000*Math.random(),school:"School C"},
-		  {axis:"Grants/Contracts",value:1000*Math.random(),school:"School C"},
-		  {axis:"State Appropriations",value:1000*Math.random(),school:"School C"},
-		  {axis:"Auxiliary Enterprises",value:1000*Math.random(),school:"School C"},
-		  {axis:"Total Net Assets",value:1000*Math.random(),school:"School C"},
-		  {axis:"Restricted Net Assests ",value:1000*Math.random(),school:"School C"},
-		  {axis:"Net of Depreciation",value:1000*Math.random(),school:"School C"},
-		  {axis:"Long-term Debt",value:1000*Math.random(),school:"School C"},
-		  {axis:"Total Expenses",value:1000*Math.random(),school:"School C"},
-		  {axis:"Operating Revenues",value:1000*Math.random(),school:"School C"},
-		  {axis:"Operating Expenses",value:1000*Math.random(),school:"School C"}],
-		  [{axis:"Endowment per Student",value:1000*Math.random(),school:"School D"},
-		  {axis:"Tuition/Fees",value:1000*Math.random(),school:"School D"},
-		  {axis:"Grants/Contracts",value:1000*Math.random(),school:"School D"},
-		  {axis:"State Appropriations",value:1000*Math.random(),school:"School D"},
-		  {axis:"Auxiliary Enterprises",value:1000*Math.random(),school:"School D"},
-		  {axis:"Total Net Assets",value:1000*Math.random(),school:"School D"},
-		  {axis:"Restricted Net Assests ",value:1000*Math.random(),school:"School D"},
-		  {axis:"Net of Depreciation",value:1000*Math.random(),school:"School D"},
-		  {axis:"Long-term Debt",value:1000*Math.random(),school:"School D"},
-		  {axis:"Total Expenses",value:1000*Math.random(),school:"School D"},
-		  {axis:"Operating Revenues",value:1000*Math.random(),school:"School D"},
-		  {axis:"Operating Expenses",value:1000*Math.random(),school:"School D"}],
-		];
+//var financial_data0 = findat();
+//console.log(financial_data0);
+/*var financial_data0 = [
+		  [{axis:"Axis 1",value:1000*Math.random(),school:"School A"},
+		  {axis:"Primary Reserves Ratio",value:equate(Math.random(),Math.max(1000*Math.random(),1000*Math.random())),school:"School B"},
+		  {axis:"Viability Ratio",value:equate(Math.random(),Math.max(1000*Math.random(),1000*Math.random())),school:"School C"}]
+		];*/
 
 //Options for the Radar chart, other than default
 var mycfg = {
@@ -71,6 +55,13 @@ var mycfg = {
 //Will expect that data is in %'s
 
 function drawWithData(target,index){ // chart = #chartA
+	//var financial_data0 = findat();
+	findat().then(result => financial_data0 = result);
+	setTimeout(function(){
+		console.log(financial_data0);
+		console.log("It has been 10 seconds");
+		console.log(target,index);
+
 	document.getElementById(target).style.opacity = 1;
 	var all_div = document.createElement('DIV'); all_div.id = "all";
 	var hr1 = document.createElement('hr'); all_div.appendChild(hr1);
@@ -195,4 +186,4 @@ function drawWithData(target,index){ // chart = #chartA
 	  .attr("fill", "#737373")
 	  .text(function(d) { return d; })
 	  ;	
-}
+},1000)}

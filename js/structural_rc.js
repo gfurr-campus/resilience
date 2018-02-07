@@ -12,12 +12,21 @@ var pie = d3.layout.pie()
     .sort(null)
     .value(function(d) { return d.population; });
 
-  structural_data0 =  [
+/*  structural_data0 =  [
     {"Info":"Weighted Average","School A": Math.random(),"School B": Math.random(),"School C": Math.random(),"School D": Math.random()},
     {"Info":"LEED Certifications","School A": Math.random(),"School B": Math.random(),"School C": Math.random(),"School D": Math.random()},
     {"Info":"Gross Square Footage","School A": Math.random(),"School B": Math.random(),"School C": Math.random(),"School D": Math.random()},
     {"Info":"Facilities Condition Index","School A": Math.random(),"School B": Math.random(),"School C": Math.random(),"School D": Math.random()},
     {"Info":"Average Building Age","School A": Math.random(),"School B": Math.random(),"School C": Math.random(),"School D": Math.random()}
+  ]; */
+
+  structural_data0 =  [
+    {"Info":"School A","Weighted Average":Math.random(),"LEED Certifications":Math.random(),"Gross Square Footage":Math.random(),"Facilities Condition Index":Math.random(),"Average Building Age":Math.random()},
+    {"Info":"School B","Weighted Average":Math.random(),"LEED Certifications":Math.random(),"Gross Square Footage":Math.random(),"Facilities Condition Index":Math.random(),"Average Building Age":Math.random()},
+    {"Info":"School C","Weighted Average":Math.random(),"LEED Certifications":Math.random(),"Gross Square Footage":Math.random(),"Facilities Condition Index":Math.random(),"Average Building Age":Math.random()},
+    {"Info":"School D","Weighted Average":Math.random(),"LEED Certifications":Math.random(),"Gross Square Footage":Math.random(),"Facilities Condition Index":Math.random(),"Average Building Age":Math.random()},
+    {"Info":"School E","Weighted Average":Math.random(),"LEED Certifications":Math.random(),"Gross Square Footage":Math.random(),"Facilities Condition Index":Math.random(),"Average Building Age":Math.random()},
+    {"Info":"School F","Weighted Average":Math.random(),"LEED Certifications":Math.random(),"Gross Square Footage":Math.random(),"Facilities Condition Index":Math.random(),"Average Building Age":Math.random()}
   ];
 
   var structural_data = JSON.parse(JSON.stringify( structural_data0 ));

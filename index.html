@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>ResilientCampus : Home</title>
+<link rel=icon href=images/favicon.png>
+<link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
@@ -12,9 +14,10 @@
 <script src="js/building_data.js"></script>
 <table width="100%">
 	<tr>
-		<td width="1%" style="white-space:nowrap">
-			<div style="display:inline;"><img src="images/image0.png"></div>
-			<div style="display:inline; white-space:nowrap;font-family: Verdana, Helvetica, sans-serif;position:relative;top:25px;">Data Visualization & Management Tool
+		<td width="8%"></td>
+		<td width="85%" style="white-space:nowrap;">
+			<div style="display:inline;"><img src="images/header.png" width="500px"></div>
+			<div style="display:inline; white-space:nowrap;font-family: Verdana, Helvetica, sans-serif;position:relative;top:25px;"><!-- Data Visualization & Management Tool -->
 				<i ng-show ="signedInRole.isguest" style="color:#00ace6" class="fa fa-address-card-o" aria-hidden="true"></i>
 				<i ng-show = "signedInRole.isadmin" style="color:#00cc66" class="fa fa-id-card-o" aria-hidden="true"></i>
 				<i ng-show = "signedInRole.ismaster" ng-show ="isguest" style="color:black" class="fa fa-id-card" aria-hidden="true"></i>
@@ -29,17 +32,13 @@
 		<td width="10px"></td>
 	</tr>
 </table>
-
+<hr style="padding:0px; margin:5px">
 <table width="100%" style="font-family: Verdana, Helvetica, sans-serif;">
 	<tr>
 		<td width="10px"></td>
 		<td id="home" align="left" width="13%">
 			<a href="index.html" style="text-decoration: none;color:black;opacity:0.5;"> &nbsp; &nbsp; &nbsp;<i class="fa fa-home"></i>
 			Home</a>
-		</td>
-		<td id="about" align="left" width="13%">
-			<a href="html/about.html" style="text-decoration: none;color:black;"> <i class="fa fa-user-circle-o"></i>
-			About</a>
 		</td>
 		<td id="data" align="left" width="13%">
 			<a href="html/data.html" style="text-decoration: none;color:black;"> <i class="fa fa-database"></i> Data</a>
@@ -71,63 +70,35 @@
 	<hr style="margin:20px;">
 	<table align="center" width="100%">
 		<tr>
-			<td style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center"> <i class="fa fa-university" aria-hidden="true"></i> &nbsp; Who We Are &nbsp; <i class="fa fa-university" aria-hidden="true"></i>
+			<td style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center"> <i class="fa fa-university" aria-hidden="true"></i> &nbsp; The Campus Resilience Project &nbsp; <i class="fa fa-university" aria-hidden="true"></i>
 			</td>
 		</tr>
 		<tr>
-			<td style="font-family: Verdana, Helvetica, sans-serif;" align="center"> <div style="width:80%"><br>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p>
-				<br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p>
-				<br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p>
+			<td style="font-family: Verdana, Helvetica, sans-serif;" align="center"> <div style="width:70%"><br>
+				<p>This project is the result of a collaboration between university planners, architects, and academic researchers interested in the topic of college and university resilience. Colleges and universities are organizationally complex and are comprised of many layers of  infrastructure. Moreover, they are often integral components of local communities. Our goal is to help administrators, planners, and researchers better understand the resilience of colleges and universities, and how they can in turn enhance the resilience of their host communities.</p>
+				<br><p>Our motivation came from trying to help universities better incorporate resilience strategies into their long-term planning. Towards that end, this website provides a university resilience assessment tool for planners, administrators, and researchers. We hope you find the tool useful. Please contact us with any questions, concerns, or suggestions.</p>
 				<br></div>
 			</td>
 		</tr>
 	</table>
 
-	<table align="center" width="80%">
+	<table align="center" width="70%">
 		<tr>
-			<td>
-				<img width="40px" src="images/appstate.png">
+			<td style="text-align: center">
+				<img width="100px" src="images/vt.png">
 			</td>
-			<td>
-				<img width="50px" src="images/auburn.png">
+			<td style="text-align: center">
+				<img width="55px" src="images/ncstate.png">
 			</td>
-			<td>
-				<img width="50px" src="images/clemson.png">
-			</td>
-			<td>
-				<img width="50px" src="images/ecu.png">
-			</td>
-			<td>
-				<img width="50px" src="images/ncstate.png">
-			</td>
-			<td>
-				<img width="50px" src="images/msstate.png">
-			</td>
-			<td>
-				<img width="50px" src="images/ufl.png">
-			</td>
-			<td>
-				<img width="50px" src="images/uga.png">
-			</td>
-			<td>
-				<img width="50px" src="images/uky.png">
-			</td>
-			<td>
-				<img width="50px" src="images/utk.png">
-			</td>
-			<td>
-				<img width="50px" src="images/vt.png">
-			</td>
-			<td>
-				<img width="50px" src="images/wvu.png">
+			<td style="text-align: center">
+				<img width="100px" src="images/fau.jpg">
 			</td>
 		</tr>
 	</table>
 	<br>
 	<hr>
 
-	<table align="center" width="80%">
+	<table align="center" width="70%">
 		<tr>
 			<td style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center" width="33%"> 
 			<i class="fa fa-bar-chart"></i><br>Data Visualization and Management
@@ -135,7 +106,7 @@
 		</tr>
 		<tr>
 			<td style="font-family: Verdana, Helvetica, sans-serif;" align="center">
-				<p><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p><br><br>
+				<p><br>This web application takes in user-generated data on campus characteristics to contruct models and visualizations of each participating university's resilience to potential threats. We use the Firebase Realtime Database to store up to 1GB worth of campus information, D3.js to display various types of interactive visualizations, and several other JavaScript frameworks. The purpose of this tool is to centralize very useful information, and make it accessible to users everywhere. </p><br><br>
 			</td>
 		</tr>
 	</table>
@@ -165,7 +136,7 @@
 	<br>
 	<hr>
 	
-	<table align="center" width="80%">
+	<!-- <table align="center" width="80%">
 		<tr>
 			<td style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center" width="33%"> 
 			<i class="fa fa-money"></i><br>Financial
@@ -214,15 +185,25 @@
 		</tr>
 	</table>
 	<br>
-	<hr>
-	<table align="center" width="80%">
+	<hr> -->
+	<table align="center" width="65%">
 		<tr>
 			<td style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center" width="33%"> 
-			<i class="fa fa-question-circle"></i><br>Global Forum Home
+			<i class="fa fa-handshake-o"></i><br>Partners
 			</td>
 		</tr>
 		<tr>
-			<td style="font-family: Verdana, Helvetica, sans-serif;" align="center"> <a href="http://www.globalforum.vt.edu/index.html" target="_blank">http://www.globalforum.vt.edu/index.html</a>
+			<td style="font-family: Verdana, Helvetica, sans-serif;" align="center"> <a href="http://www.hewv.com/" target="_blank"><img width="200px" src="images/hanbury.png"></img></a>
+			</td>
+		</tr>
+		<tr>
+			<td >
+				<br><p>Curiosity, exploration and reflection shape design and innovative outcomes at Hanbury, supporting our aspirations to be a global resource for higher education. We engage in the most relevant research to enrich our work and to strategically partner with our clients.</p>
+
+<p>Since 1979, Hanbury has been a voice in the planning, architecture, and interior design professions across the United States and abroad. Our practice is based on a willingness to listen and learn, exploring transformational ideas with colleagues, clients, and consultants, garnering the recognition of both design and industry-specific award programs. </p>
+
+
+<p>Our studio environment encourages inclusivity, exploration, research, and critical thinking. We value collaboration both internally and with our consultants and clients. Sharing ideas, listening, and embracing the contributions of all in the conversation enhances our work.</p>
 			</td>
 		</tr>
 	</table>
@@ -251,13 +232,16 @@
           		<th width="20%">Last Name</th>
           		<td width="80%"><input style="width:100%" ng-model="newUser.ln"></input></td>
           	</tr>
+          		<th width="20%">User Name</th>
+          		<td width="80%"><input style="width:100%" ng-model="newUser.u"></input></td>
+          	</tr>
           	<tr>
           		<th width="20%">Email Address</th>
           		<td width="80%"><input style="width:100%" ng-model="newUser.e"></input></td>
           	</tr>
           	<tr>
           		<th width="20%">Password</th>
-          		<td width="80%"><input style="width:100%" ng-model="newUser.pw"></input></td>
+          		<td width="80%"><input type="password" style="width:100%" ng-model="newUser.pw"></input></td>
           	</tr>
           	<tr>
           		<th width="20%">Role (Request)</th>
@@ -296,7 +280,7 @@
           	</tr>
           	<tr>
           		<th width="20%">Password</th>
-          		<td width="80%"><input style="width:100%" ng-model="oldUser.pw"></input></td>
+          		<td width="80%"><input type="password" style="width:100%" ng-model="oldUser.pw"></input></td>
           	</tr>
           </table>
         </div>
@@ -343,7 +327,7 @@
         </div>
         <div class="modal-body">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p>
-          <textarea style="width:100%" ng-model="???"></textarea>
+          <textarea style="width:100%" ng-model="help_request"></textarea>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
@@ -352,6 +336,9 @@
       
     </div>
   </div>
-
+  <br><br>
 </body>
+<footer class="footer" style="background-color:black; text-align: center;color:white;">
+	<p style="padding:10px;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;">Copyright © 2018 Hanbury, Global Forum for Urban and Regional Resilience</p>
+</footer>
 </html>

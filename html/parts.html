@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>ResilientCampus : Participants </title>
+<link rel=icon href=../images/favicon.png>
+<link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
@@ -13,30 +15,31 @@
 <script src="../js/building_data.js"></script>
 <table width="100%">
 	<tr>
-		<td width="1%" style="white-space:nowrap">
-			<div style="display:inline;"><img src="../images/image0.png"></div>
-			<div style="display:inline; white-space:nowrap;font-family: Verdana, Helvetica, sans-serif;position:relative;top:25px;">Data Visualization & Management Tool</div>
+		<td width="8%"></td>
+		<td width="85%" style="white-space:nowrap;">
+			<div style="display:inline;"><img src="../images/header.png" width="500px"></div>
+			<div style="display:inline; white-space:nowrap;font-family: Verdana, Helvetica, sans-serif;position:relative;top:25px;"><!-- Data Visualization & Management Tool -->
+				<i ng-show ="signedInRole.isguest" style="color:#00ace6" class="fa fa-address-card-o" aria-hidden="true"></i>
+				<i ng-show = "signedInRole.isadmin" style="color:#00cc66" class="fa fa-id-card-o" aria-hidden="true"></i>
+				<i ng-show = "signedInRole.ismaster" ng-show ="isguest" style="color:black" class="fa fa-id-card" aria-hidden="true"></i>
+			</div>
 		</td>
 		<td align="right">
-			<i class="fa fa-sign-in"></i><br>
-			<i class="fa fa-sign-out"></i><br>
-			<i class="fa fa-edit"></i><br>
-			<i class="fa fa-question-circle"></i>
+			<i class="fa fa-sign-in" data-toggle="modal" data-target="#loginModal"></i><br>
+			<i class="fa fa-sign-out" data-toggle="modal" data-target="#logoutModal"></i><br>
+			<i class="fa fa-edit" data-toggle="modal" data-target="#signupModal"></i><br>
+			<i class="fa fa-question-circle" data-toggle="modal" data-target="#helpModal"></i>
 		</td>
 		<td width="10px"></td>
 	</tr>
 </table>
-
+<hr style="padding:0px; margin:5px">
 <table width="100%" style="font-family: Verdana, Helvetica, sans-serif;">
 	<tr>
 		<td width="10px"></td>
 		<td align="left" width="13%">
 			<a href="../index.html" style="text-decoration: none;color:black;"> &nbsp; &nbsp; &nbsp;<i class="fa fa-home"></i>
 			Home</a>
-		</td>
-		<td align="left" width="13%">
-			<a href="../html/about.html" style="text-decoration: none;color:black;"> <i class="fa fa-user-circle-o"></i>
-			About</a>
 		</td>
 		<td align="left" width="13%">
 			<a href="../html/data.html" style="text-decoration: none;color:black;"> <i class="fa fa-database"></i> Data</a>
@@ -62,13 +65,13 @@
 </table>
 <hr style="margin:5px;">
 </head>
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
 
-<div ng-app="myApp" ng-controller="myCtrl">
+<div>
 
-	<table align="center" width="90%">
+	<table align="center" width="35%">
 		<tr>
-			<td>
+			<!-- <td>
 				<img width="50px" src="../images/appstate.png">
 			</td>
 			<td>
@@ -79,11 +82,14 @@
 			</td>
 			<td>
 				<img width="60px" src="../images/ecu.png">
+			</td> -->
+			<td style="text-align: center;">
+				<img width="70px" src="../images/fau.jpg">
 			</td>
-			<td>
+			<td style="text-align: center;">
 				<img width="50px" src="../images/ncstate.png">
 			</td>
-			<td>
+			<!-- <td>
 				<img width="60px" src="../images/msstate.png">
 			</td>
 			<td>
@@ -97,13 +103,13 @@
 			</td>
 			<td>
 				<img width="50px" src="../images/utk.png">
-			</td>
-			<td>
+			</td> -->
+			<td style="text-align: center;">
 				<img width="80px" src="../images/vt.png">
 			</td>
-			<td>
+			<!-- <td>
 				<img width="50px" src="../images/wvu.png">
-			</td>
+			</td> -->
 		</tr>
 	</table>
 	<hr style="margin:5px;">
@@ -115,18 +121,19 @@
 		</tr>
 		<tr>
 			<td style="font-family: Verdana, Helvetica, sans-serif;" align="center">
-			<a href="http://www.appstate.edu/" target="_blank">Appalachian State University</a><br>
+			<!-- <a href="http://www.appstate.edu/" target="_blank">Appalachian State University</a><br>
 			<a href="http://www.auburn.edu/" target="_blank">Auburn University<br>
 			<a href="http://www.clemson.edu/" target="_blank">Clemson University<br>
-			<a href="http://www.ecu.edu/" target="_blank">East Carolina University<br>
+			<a href="http://www.ecu.edu/" target="_blank">East Carolina University<br> -->
 			<a href="http://www.ncsu.edu/" target="_blank">North Carolina State University<br>
-			<a href="http://www.msstate.edu/" target="_blank">Mississippi State University<br>
+			<!-- <a href="http://www.msstate.edu/" target="_blank">Mississippi State University<br>
 			<a href="http://www.ufl.edu/" target="_blank">University of Florida<br>
 			<a href="http://www.uga.edu/" target="_blank">University of Georgia<br>
 			<a href="http://www.uky.edu/" target="_blank">University of Kentucky<br>
-			<a href="http://www.utk.edu/" target="_blank">University of Tennessee<br>
+			<a href="http://www.utk.edu/" target="_blank">University of Tennessee<br> -->
 			<a href="http://www.vt.edu/" target="_blank">Virginia Polytechnic Institute & State University<br>
-			<a href="http://www.wvu.edu/" target="_blank">West Virginia University<br>
+			<!-- <a href="http://www.wvu.edu/" target="_blank">West Virginia University<br> -->
+			<a href="http://www.fau.edu/" target="_blank">Florida Atlantic University<br>
 			</td>
 		</tr>
 	</table>
@@ -194,5 +201,9 @@
 	<br>
 </div>
 
+  <br><br>
 </body>
+<footer class="footer" style="background-color:black; text-align: center;color:white;">
+	<p style=" padding: 10px;">Copyright © 2018 Hanbury, Global Forum for Urban and Regional Resilience</p>
+</footer>
 </html>

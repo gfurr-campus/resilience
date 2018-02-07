@@ -29,7 +29,7 @@ if('undefined' !== typeof options){
 	var allAxis = (d[0].map(function(i, j){return i.axis}));
 	var total = allAxis.length;
 	var radius = cfg.factor*Math.min(cfg.w/2, cfg.h/2);
-	var Format = d3.format('$,.2f');
+	var Format = d3.format(',.2f');
 	d3.select(id).select("svg").remove();
 	
 	var g = d3.select(id)

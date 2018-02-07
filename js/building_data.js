@@ -145,12 +145,14 @@ function initMap() {
 
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
+	getCurrentUser();
     $scope.roles = ["Master (Full Access)","Administrator (Read/Write Access)","Guest (Read-Only)"];
     $scope.selectedRole = $scope.roles[$scope.roles.length-1]; 
 
     $scope.newUser = {
     	fn : "",
     	ln : "",
+    	u : "",
     	e : "",
     	pw : "",
     	r : $scope.selectedRole
@@ -188,7 +190,7 @@ app.controller('myCtrl', function($scope) {
     }
 
     $scope.ng_createUser = function(){
-    	createUser($scope.newUser.fn,$scope.newUser.ln,$scope.newUser.e,$scope.newUser.pw,$scope.newUser.r);
+    	createUser($scope.newUser.fn,$scope.newUser.ln,$scope.newUser.u,$scope.newUser.e,$scope.newUser.pw,$scope.newUser.r);
     }
 
     $scope.ng_signIn = function(){
@@ -298,5 +300,7 @@ app.controller('myCtrl', function($scope) {
 
     $scope.leed = ["(none)","Bronze","Silver","Gold","Platinum"];
     $scope.selectedLEED = $scope.leed[0];
+
+    $scope.help_request = "";
 
 });
