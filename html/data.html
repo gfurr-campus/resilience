@@ -70,11 +70,8 @@
       <div>
          <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#finance">Financial</a></li>
-            <li><a data-toggle="tab" href="#infrastructure">Infrastructure</a></li>
+            <li><a data-toggle="tab" href="#infrastructure">Built Environment</a></li>
             <li><a data-toggle="tab" href="#social">Socio-Political</a></li>
-            <li><a data-toggle="tab" href="#financex">Financial*</a></li>
-            <li><a data-toggle="tab" href="#infrastructurex">Infrastructure*</a></li>
-            <li><a data-toggle="tab" href="#socialx">Socio-Political*</a></li>
          </ul>
          <div class="tab-content">
             <div id="finance" class="tab-pane fade in active">
@@ -98,43 +95,27 @@
                      <th>REVENUES <i class="fa fa-sort"></i></th>
                      <th>EXPENSES <i class="fa fa-sort"></i></th>
                   </tr>
-                  <tr>
+                  <tr ng-repeat="row in fin_data">
                      <td width="10px"></td>
-                     <td>School A</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                  </tr>
-                  <tr>
-                     <td width="10px"></td>
-                     <td>School B</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
+                     <td>{{row.universityName}}</td>
+                     <td>{{row.totalEndowment}}</td>
+                     <td>{{row.tuitionFees}}</td>
+                     <td>{{row.grantsContracts}}</td>
+                     <td>{{row.stateAppropriations}}</td>
+                     <td>{{row.auxiliaryEnterprises}}</td>
+                     <td>{{row.totalNetAssets}}</td>
+                     <td>{{row.restrictedNetAssets}}</td>
+                     <td>{{row.capitalAssestsNetForDepreciation}}</td>
+                     <td>{{row.longTermDebtForPropertyPlantAndEquipment}}</td>
+                     <td>{{row.totalExpenses}}</td>
+                     <td>{{row.operatingRevenues}}</td>
+                     <td>{{row.operatingExpenses}}</td>
                   </tr>
                </table>
             </div>
             <div id="infrastructure" class="tab-pane fade">
-               <h3>&nbsp; Aggregated Infrastructure Data</h3>
-               <div align="right" style="margin-bottom: 10px;margin-top: -40px;"><button  type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Create New Entry</button> &nbsp;</div>
+               <h3>&nbsp; Aggregated Built Environment Data</h3>
+               <div align="right" style="margin-bottom: 10px;margin-top: -40px;"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Create New Entry</button> &nbsp;</div>
                <div style="width:98%;margin: 0 auto;" align="left"><p style="font-family: Verdana, Helvetica, sans-serif;"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p></div>
                <table width="100%" class="table table-striped">
                   <tr>
@@ -143,8 +124,10 @@
                      <th>YEAR_AVG <i class="fa fa-sort"></i></th>
                      <th>AGE_AVG <i class="fa fa-sort"></i></th>
                      <th>FCI_AVG <i class="fa fa-sort"></i></th>
-                     <th>GSF_AVG <i class="fa fa-sort"></i></th>
+                     <th>GSF_TOT <i class="fa fa-sort"></i></th>
                      <th>LEED_TOT <i class="fa fa-sort"></i></th>
+                     <th>ELEC_GEN <i class="fa fa-sort"></i></th>
+                     <th>ELEC_CONS <i class="fa fa-sort"></i></th>
                      <th>WT_SCORE <i class="fa fa-sort"></i></th>
                   </tr>
                   <tr>
@@ -156,9 +139,13 @@
                      <td>[Data Entry]</td>
                      <td>[Data Entry]</td>
                      <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
                   </tr>
                   <tr>
                      <td width="10px"></td>
+                     <td>[Data Entry]</td>
+                     <td>[Data Entry]</td>
                      <td>[Data Entry]</td>
                      <td>[Data Entry]</td>
                      <td>[Data Entry]</td>
@@ -171,113 +158,8 @@
             </div>
             <div id="social" class="tab-pane fade">
                <h3>&nbsp; Aggregated Socio-Political Entries</h3>
-               <div align="right" style="margin-bottom: 10px;margin-top: -40px;"><button  type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Create New Entry</button> &nbsp;</div>
-               <div style="width:98%;margin: 0 auto;" align="left"><p style="font-family: Verdana, Helvetica, sans-serif;"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p></div>
-               <table width="100%" class="table table-striped">
-                  <tr>
-                     <td width="10px"></td>
-                     <th> TBD <i class="fa fa-sort"></i></th>
-                  </tr>
-               </table>
-            </div>
-            <div id="financex" class="tab-pane fade">
-               <h3>&nbsp; Disaggregated Financial Data</h3>
-               <div align="right" style="margin-bottom: 10px;margin-top: -40px;"><button  type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Create New Entry</button> &nbsp;</div>
-               <div style="width:98%;margin: 0 auto;" align="left"><p style="font-family: Verdana, Helvetica, sans-serif;"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p></div>
-               <table width="100%" class="table table-striped">
-                  <tr>
-                     <td width="10px"></td>
-                     <th>SCHOOL <i class="fa fa-sort"></i></th>
-                     <th>ENDOWMENT <i class="fa fa-sort"></i></th>
-                     <th>TUITION <i class="fa fa-sort"></i></th>
-                     <th>GRANTS <i class="fa fa-sort"></i></th>
-                     <th>STATE <i class="fa fa-sort"></i></th>
-                     <th>AUXILIARY <i class="fa fa-sort"></i></th>
-                     <th>TOTAL_NE <i class="fa fa-sort"></i></th>
-                     <th>RESTRICTED <i class="fa fa-sort"></i></th>
-                     <th>DEPRECIATION <i class="fa fa-sort"></i></th>
-                     <th>DEBT <i class="fa fa-sort"></i></th>
-                     <th>TOTAL_EX <i class="fa fa-sort"></i></th>
-                     <th>REVENUES <i class="fa fa-sort"></i></th>
-                     <th>EXPENSES <i class="fa fa-sort"></i></th>
-                  </tr>
-                  <tr>
-                     <td width="10px"></td>
-                     <td>School A</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                  </tr>
-                  <tr>
-                     <td width="10px"></td>
-                     <td>School B</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                     <td>$0.00</td>
-                  </tr>
-               </table>
-            </div>
-            <div id="infrastructurex" class="tab-pane fade">
-               <h3>&nbsp; Disaggregated  Infrastructure Entries</h3>
-               <div align="right" style="margin-bottom: 10px;margin-top: -40px;"><button  type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Create New Entry</button> &nbsp;</div>
-               <div style="width:98%;margin: 0 auto;" align="left"><p style="font-family: Verdana, Helvetica, sans-serif;"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p></div>
-               <table width="100%" class="table table-striped">
-                  <tr>
-                     <td width="10px"></td>
-                     <th>AFFILIATION <i class="fa fa-sort"></i></th>
-                     <th>NAME <i class="fa fa-sort"></i></th>
-                     <th>YEAR <i class="fa fa-sort"></i></th>
-                     <th>AGE <i class="fa fa-sort"></i></th>
-                     <th>FCI <i class="fa fa-sort"></i></th>
-                     <th>GSF <i class="fa fa-sort"></i></th>
-                     <th>LEED <i class="fa fa-sort"></i></th>
-                     <th>SCORE <i class="fa fa-sort"></i></th>
-                  </tr>
-                  <tr>
-                     <td width="10px"></td>
-                     <td>[Data Entry]</td>
-                     <td>[Data Entry]</td>
-                     <td>[Data Entry]</td>
-                     <td>[Data Entry]</td>
-                     <td>[Data Entry]</td>
-                     <td>[Data Entry]</td>
-                     <td>[Data Entry]</td>
-                     <td>[Data Entry]</td>
-                  </tr>
-                  <tr>
-                     <td width="10px"></td>
-                     <td>[Data Entry]</td>
-                     <td>[Data Entry]</td>
-                     <td>[Data Entry]</td>
-                     <td>[Data Entry]</td>
-                     <td>[Data Entry]</td>
-                     <td>[Data Entry]</td>
-                     <td>[Data Entry]</td>
-                     <td>[Data Entry]</td>
-                  </tr>
-               </table>
-            </div>
-            <div id="socialx" class="tab-pane fade">
-               <h3>&nbsp; Disaggregated Socio-Political Entries</h3>
-               <div align="right" style="margin-bottom: 10px;margin-top: -40px;"><button  type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Create New Entry</button> &nbsp;</div>
+               &nbsp; <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Create New Entry</button>
+               <!-- <div align="right" style="margin-bottom: 10px;margin-top: -40px;"><button  type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Create New Entry</button> &nbsp;</div> -->
                <div style="width:98%;margin: 0 auto;" align="left"><p style="font-family: Verdana, Helvetica, sans-serif;"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p></div>
                <table width="100%" class="table table-striped">
                   <tr>
@@ -300,9 +182,9 @@
                </div>
                <div class="modal-body">
                   <ul class="nav nav-tabs">
-                     <li class="active"><a data-toggle="tab" href="#fin">Financial</a></li>
-                     <li><a data-toggle="tab" href="#infra">Infrastructure</a></li>
-                     <li><a data-toggle="tab" href="#soc">Socio-Political</a></li>
+                     <li class="active" ng-click="setDT(1)"><a data-toggle="tab" href="#fin">Financial</a></li>
+                     <li ng-click="setDT(2)"><a data-toggle="tab" href="#infra">Built Environment</a></li>
+                     <li ng-click="setDT(3)"><a data-toggle="tab" href="#soc">Socio-Political</a></li>
                   </ul>
                   <div class="tab-content">
                      <div id="fin" class="tab-pane fade in active">
@@ -313,7 +195,7 @@
                            </tr>
                            <tr>
                               <th width="30%">University Name &nbsp;</th>
-                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;" ng-model="univ"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                            <tr style="height:15px"></tr>
@@ -322,12 +204,12 @@
                            </tr>
                            <tr>
                               <th width="30%">Total Endowment &nbsp;</th>
-                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;" ng-model="endow"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                            <tr>
                               <th width="30%">Total Students &nbsp;</th>
-                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;" ng-model="stud"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                            <tr style="height:15px"></tr>
@@ -336,22 +218,22 @@
                            </tr>
                            <tr>
                               <th width="30%">Tuition/Fees &nbsp;</th>
-                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;" ng-model="fees"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                            <tr>
                               <th width="30%">Grants/Contracts &nbsp;</th>
-                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;" ng-model="grants"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                            <tr>
                               <th width="30%">State Appropriations &nbsp;</th>
-                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;" ng-model="state"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                            <tr>
                               <th width="30%">Auxiliary Enterprises &nbsp;</th>
-                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;" ng-model="aux"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                            </tr>
@@ -361,43 +243,43 @@
                            </tr>
                            <tr>
                               <th width="30%">Total Net Assets &nbsp;</th>
-                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;" ng-model="tnet"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                            <tr>
                               <th width="30%">Restricted Net Assests &nbsp;</th>
-                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;" ng-model="rnet"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                            <tr>
                               <th width="30%">Capital Assets Net for Depreciation &nbsp;</th>
-                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;" ng-model="cnet"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                            <tr>
                               <th width="30%">Long-Term Debt for Property, Plant, and Equipment &nbsp;</th>
-                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;" ng-model="lterm"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                            <tr>
                               <th width="30%">Total Expenses &nbsp;</th>
-                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;" ng-model="exp"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                            <tr>
                               <th width="30%">Operating Revenues &nbsp;</th>
-                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;" ng-model="oprev"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                            <tr>
                               <th width="30%">Operating Expenses &nbsp;</th>
-                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;" ng-model="opex"></td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
                         </table>
                      </div>
                      <div id="infra" class="tab-pane fade">
-                        <h3>New Infrastructure Entry</h3>
+                        <h3>New Built Environment Entry</h3>
                         <table width="100%">
                            <tr>
                               <th  style="background:#f2f2f2;" colspan="2">UNIVERSITY AFFILIATION</th>
@@ -439,6 +321,20 @@
                                  </td>
                               <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
                            </tr>
+                           <tr style="height:15px"></tr>
+                           <tr>
+                              <th  style="background:#f2f2f2;" colspan="2">ENERGY INFORMATION</th>
+                           </tr>
+                           <tr>
+                              <th width="15%">Electricity Generation &nbsp;</th>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
+                           </tr>
+                           <tr>
+                              <th width="15%">Electricity Consumption &nbsp;</th>
+                              <td width="65%"><input style="width:100%;margin-bottom:5px;"></td>
+                              <td width="5%" align="center"> &nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></td>
+                           </tr>
                         </table>
                      </div>
                      <div id="soc" class="tab-pane fade">
@@ -464,7 +360,7 @@
                   </div>
                </div>
                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+                  <button type="button" ng-click="createData()" class="btn btn-default" data-dismiss="modal">Submit</button>
                   <button type="button" class="btn btn-default" data-dismiss="modal">Clear</button>
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                </div>

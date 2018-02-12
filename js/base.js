@@ -83,12 +83,48 @@ function createFinancialEntry(univ,endow,stud,fees,grants,state,aux,tnet,rnet,cn
       this._endowmentPerStudent();
     }*/}).then(function(){
     console.log("B");
+    location.reload();
   }).catch(function(error){
     console.log("C");
     var errorCode = error.code;
     var errorMessage = error.message;
     console.log(errorCode+":"+errorMessage);
   });
+}
+
+function findat(){
+  return firebase.database().ref("financial_data").once('value').then(function(snapshot){
+    var x = snapshot.val();
+    var list = [];
+    for(var school in x){
+      //console.log(school);
+      if(typeof LegendOptions !== 'undefined'){
+        LegendOptions.push(school);
+      }
+      list.push(
+        [{axis: "Endowment/Student", value: x[school].endowmentPerStudent, school: school},
+        {axis:"Primary Reserves Ratio", value: x[school].primaryReservesRatio, school: school},
+        {axis:"Viability Ratio",value: x[school].viabilityRatio,school: school}]
+      );
+    }
+    thing = limits_f(0,list,1);
+    return thing;
+  })
+
+  function limits_f(l,d,u){
+    var es = l; var prr = l; var vr = l;
+    for(var i = 0; i < d.length; i++){
+      es = Math.max(d[i][0].value,es);
+      prr = Math.max(d[i][1].value,prr);
+      vr = Math.max(d[i][2].value,vr);
+    }
+    for(var i = 0; i < d.length; i++){
+      d[i][0].value = d[i][0].value/es;
+      d[i][1].value = d[i][1].value/prr;
+      d[i][2].value = d[i][2].value/vr;
+    }
+    return d;
+  }
 }
 
 //console.log("???");

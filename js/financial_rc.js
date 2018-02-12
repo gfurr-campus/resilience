@@ -9,26 +9,8 @@ function equate(value,max){
 var colorscale = d3.scale.category10();
 
 //Legend titles
-var LegendOptions = ['School A','School B', "School C", "School D"];
+var LegendOptions = [];
 
-function findat(){
-	//console.log("poop");
-	//var thing = null;
-	return firebase.database().ref("financial_data").once('value').then(function(snapshot){
-		var x = snapshot.val();
-		var list = [];
-		for(var school in x){
-			list.push(
-				[{axis: "Endowment/Student", value: x[school].endowmentPerStudent, school: school},
-				{axis:"Primary Reserves Ratio", value: x[school].primaryReservesRatio, school: school},
-		  		{axis:"Viability Ratio",value: x[school].viabilityRatio,school: school}]
-			);
-		}
-		thing = list;
-		return list;
-	})
-	//console.log(thing);
-}
 var financial_data0 = null;
 //findat().then(result => financial_data0 = result);
 //console.log(findat());
@@ -58,9 +40,9 @@ function drawWithData(target,index){ // chart = #chartA
 	//var financial_data0 = findat();
 	findat().then(result => financial_data0 = result);
 	setTimeout(function(){
-		console.log(financial_data0);
-		console.log("It has been 10 seconds");
-		console.log(target,index);
+		//console.log(financial_data0);
+		//console.log("It has been 10 seconds");
+		//console.log(target,index);
 
 	document.getElementById(target).style.opacity = 1;
 	var all_div = document.createElement('DIV'); all_div.id = "all";
